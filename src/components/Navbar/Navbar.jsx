@@ -1,9 +1,7 @@
 import React from "react";
 import { Search } from "lucide-react";
-import { ShoppingCart } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 import Darkmode from "./Darkmode";
-import { data } from "autoprefixer";
 
 const MenuLinks = [
   {
@@ -26,17 +24,17 @@ const MenuLinks = [
 const DropdownLinks = [
   {
     id: 1,
-    name: "Ofertas",
+    name: "Registrar usuario",
     link: "/#",
   },
   {
     id: 2,
-    name: "Mejores Articulos",
+    name: "Iniciar sesion",
     link: "/#",
   },
   {
     id: 3,
-    name: "Productos con mas ventas",
+    name: "Opciones de administrador",
     link: "/#",
   },
 ];
@@ -113,12 +111,6 @@ const Navbar = () => {
           <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-xl text-gray-600 duration-200 group-hover:text-primary dark:text-gray-400" />
         </div>
         {/*Order Button Section */}
-        <button className="relative p-3">
-          <ShoppingCart className="text-xl text-gray-600 hover:text-gray-400 dark:text-gray-300" />
-          <div className="iems-center absolute right-0 top-0 flex h-4 w-4 justify-center rounded-full bg-red-500 text-xs text-white">
-            4
-          </div>
-        </button>
 
         {/* Modo oscuro/Dark mode section */}
         <div>
