@@ -5,9 +5,13 @@ import Category from "./components/Category/Category";
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <Hero />
-      <Category />
+      <BrowserRouter>
+        <App />
+
+        <Navbar />
+        <Hero />
+        <Category />
+      </BrowserRouter>
     </div>
   );
 };

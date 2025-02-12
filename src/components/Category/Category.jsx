@@ -10,18 +10,24 @@ const Category = () => {
           <div className="relative flex h-[320px] items-end rounded-3xl bg-gradient-to-br from-black/90 to-black/70 py-10 pl-5 text-white">
             <div>
               <div className="mb-4">
-                <img
-                  src={imagen2}
-                  alt=""
-                  className="absolute top-5 w-[200px]"
-                />
                 <p>Disfruta</p>
                 <p>nose w</p>
                 <p>Placeholder momento</p>
               </div>
             </div>
+            <img src={imagen2} alt="" className="absolute top-5 w-[200px]" />
           </div>
           {/* Segunda Columna  */}
+          <div className="relative flex h-[320px] items-end rounded-3xl bg-gradient-to-br from-black/90 to-black/70 py-10 pl-5 text-white">
+            <div>
+              <div className="mb-4">
+                <p>Disfruta</p>
+                <p>nose w</p>
+                <p>Placeholder momento</p>
+              </div>
+            </div>
+            <img src={imagen2} alt="" className="absolute top-5 w-[200px]" />
+          </div>
           {/* Tercera Columna  */}
         </div>
       </div>

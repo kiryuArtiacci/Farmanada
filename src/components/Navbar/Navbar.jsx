@@ -1,6 +1,7 @@
 import React from "react";
 import { Search } from "lucide-react";
 import { ChevronDown } from "lucide-react";
+import { Routes, Route } from "react-router";
 import Darkmode from "./Darkmode";
 
 const MenuLinks = [
@@ -35,7 +36,7 @@ const DropdownLinks = [
   {
     id: 3,
     name: "Opciones de administrador",
-    link: "/#",
+    link: "../../App2.jsx",
   },
 ];
 
