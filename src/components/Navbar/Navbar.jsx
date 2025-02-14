@@ -1,14 +1,14 @@
 import React from "react";
 import { Search } from "lucide-react";
 import { ChevronDown } from "lucide-react";
-import { Routes, Route } from "react-router";
 import Darkmode from "./Darkmode";
+import { Link } from "react-router";
 
 const MenuLinks = [
   {
     id: 1,
     name: "Home",
-    link: "/#",
+    link: "/",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const DropdownLinks = [
   {
     id: 3,
     name: "Opciones de administrador",
-    link: "../../App2.jsx",
+    link: "/admin",
   },
 ];
 
@@ -84,14 +84,15 @@ const Navbar = () => {
                     <ul className="space-y-2">
                       {DropdownLinks.map((data, index) => (
                         <li>
-                          <a
-                            href={data.link}
+                          <Link
+                            to={data.link}
                             className="font-semibold text-gray-600 duration-200 hover:text-black dark:hover:text-white"
                           >
                             {data.name}
-                          </a>
+                          </Link>
                         </li>
                       ))}
+                      <li></li>
                     </ul>
                   </div>
                 </li>

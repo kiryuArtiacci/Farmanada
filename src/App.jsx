@@ -1,18 +1,17 @@
 import React from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import Category from "./components/Category/Category";
+import { Routes, Route } from "react-router";
+import Home from "./pages/Home";
+import Admin from "./pages/Admin";
+import Layout from "./layouts/Layout";
+
 const App = () => {
   return (
-    <div>
-      <BrowserRouter>
-        <App />
-
-        <Navbar />
-        <Hero />
-        <Category />
-      </BrowserRouter>
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="admin" element={<Admin />} />
+      </Route>
+    </Routes>
   );
 };
 
