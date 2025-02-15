@@ -17,7 +17,7 @@ const MenuLinks = [
   {
     id: 3,
     name: "Shop",
-    link: "/#",
+    link: "./Sub-menus/Shop",
   },
 ];
 
@@ -25,17 +25,17 @@ const DropdownLinks = [
   {
     id: 1,
     name: "Registrar usuario",
-    link: "/#",
+    link: "./Sub-menus/RegistrarUser",
   },
   {
     id: 2,
     name: "Iniciar sesion",
-    link: "/#",
+    link: "./Sub-menus/IniciarSesion",
   },
   {
     id: 3,
     name: "Opciones de administrador",
-    link: "/#",
+    link: "./Sub-menus/Administracion",
   },
 ];
 
@@ -49,7 +49,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <a
               href="#"
-              className="tracking-wides text-2xl font-semibold uppercase text-primary sm:text-3xl"
+              className="tracking-wides text-2xl font-semibold uppercase text-primary sm:text-3xl text-black"
             >
               Farma-nada
             </a>
