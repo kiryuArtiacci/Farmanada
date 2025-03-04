@@ -48,12 +48,12 @@ const Navbar = () => {
       <div className="relative z-40 bg-white duration-200 dark:bg-gray-900 dark:text-white">
         <div className="py-4">
           <div className="flex items-center gap-4">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="tracking-wides text-2xl font-semibold uppercase text-primary sm:text-3xl"
             >
               Farma-nada
-            </a>
+            </Link>
 
             {/*Items menu */}
             <div className="hidden lg:block">

@@ -1,6 +1,6 @@
 import React from "react";
-import Hero from "../components/Hero/Hero";
-import Category from "../components/Category/Category";
+import Hero from "../components/hero/Hero";
+import Category from "../components/category/Category";
 const App = () => {
   return (
     <div>
