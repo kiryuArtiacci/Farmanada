@@ -1,6 +1,12 @@
 import React from "react";
 
-const List_item = ({ item_name, img_src, description, price, stock }) => {
+const List_item = ({
+  item_name,
+  img_src,
+  description,
+  price = null,
+  stock = null,
+}) => {
   return (
     <span className="container-a">
       <img src={img_src} alt={item_name} className="item-icon" />

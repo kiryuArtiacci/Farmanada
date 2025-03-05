@@ -13,4 +13,5 @@
   justify-content: left;
   background: #09f;
   padding: 20px;
+  flex-direction: column;
 }

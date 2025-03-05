@@ -1,5 +1,6 @@
 .container-a {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background: rgb(255, 255, 255);
@@ -19,7 +20,7 @@
   margin-right: 10px;
   font-weight: bold;
   font-size: 20px;
-  margin-left:10px ;
+  margin-left: 10px;
 }
 .item-description {
   color: rgb(0, 0, 0);
