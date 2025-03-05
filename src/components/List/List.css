@@ -1,0 +1,8 @@
+.container-list {
+  display: flex;
+  width: 50vw;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  background: #09f;
+}
