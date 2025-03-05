@@ -1,0 +1,16 @@
+.admin-page-container {
+  display: flex;
+  height: 100%;
+}
+
+.list-container {
+  display: flex;
+  width: 700px;
+  height: 800px;
+  border: 1px solid white;
+  border-radius: 30px;
+  align-items: self-start;
+  justify-content: left;
+  background: #09f;
+  padding: 20px;
+}

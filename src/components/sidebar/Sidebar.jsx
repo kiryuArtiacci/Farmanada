@@ -8,7 +8,7 @@ import { createContext, useContext, useState } from "react";
 const SidebarContext = createContext();
 
 // Componente principal del Sidebar
-export default function Sidebar({ children }) {
+export default function Sidebar() {
   // Desestructurar children
   // Estado para controlar si el sidebar está expandido o colapsado
   const [expanded, setExpanded] = useState(false);
@@ -31,7 +31,24 @@ export default function Sidebar({ children }) {
 
           {/* Proveedor de contexto que permite compartir el estado "expanded" */}
           <SidebarContext.Provider value={{ expanded }}>
-            <ul className="flex-1 px-3">{children}</ul>{" "}
+            <ul className="flex-1 px-3">
+              <SidebarItem icon="/public/house-icon.svg" text="HOME" />
+              <SidebarItem icon="/public/dashboard-icon.svg" text="DASHBOARD" />
+              <SidebarItem
+                icon="/public/employeer-icon.svg"
+                text="EMPLOYEERS"
+              />
+              <SidebarItem icon="/public/pill-icon.svg" text="DRUGS" />
+              <SidebarItem icon="/public/warehouse-icon.svg" text="SUCURSALS" />
+              <SidebarItem
+                icon="/public/shopping-cart-icon.svg"
+                text="PURCHASES"
+              />
+              <SidebarItem
+                icon="/public/microscope-icon.svg"
+                text="LABS/PROVIDERS"
+              />
+            </ul>{" "}
             {/* Aquí se renderizan los elementos del sidebar */}
           </SidebarContext.Provider>
 
@@ -58,7 +75,7 @@ export default function Sidebar({ children }) {
 }
 
 // Componente para los elementos individuales del Sidebar
-export function SidebarItem({ icon, text, alert, active = false }) {
+export function SidebarItem({ icon, text, alert = false, active = false }) {
   // Obtiene el estado "expanded" del contexto
   const { expanded } = useContext(SidebarContext);
 

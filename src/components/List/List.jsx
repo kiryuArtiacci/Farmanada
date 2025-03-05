@@ -1,12 +1,9 @@
 import React from "react";
 import "./List.css";
+import List_item from "./List_item";
 
-const List = ({ option }) => {
-  return (
-    <div className="list-container">
-      <h1>Elementos:</h1>
-    </div>
-  );
+const List = ({ children }) => {
+  return <div className="list-container">{children}</div>;
 };
 
 export default List;

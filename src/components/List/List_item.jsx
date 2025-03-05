@@ -1,0 +1,16 @@
+import React from "react";
+
+const List_item = ({ item_name, img_src, description, price, stock }) => {
+  return (
+    <span className="container-a">
+      <img src={img_src} alt={item_name} className="item-icon" />
+
+      <h2 className="item-name">{item_name}</h2>
+      <p className="item-description">{description}</p>
+      <h3 className="item-stock">{stock}</h3>
+      <h3 className="item-price">{price}</h3>
+    </span>
+  );
+};
+
+export default List_item;
