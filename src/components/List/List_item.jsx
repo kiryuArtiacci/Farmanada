@@ -1,5 +1,5 @@
 import React from "react";
-
+import { EllipsisVertical } from "lucide-react";
 const List_item = ({
   item_name,
   img_src,
@@ -15,6 +15,8 @@ const List_item = ({
       <p className="item-description">{description}</p>
       <h3 className="item-stock">{stock}</h3>
       <h3 className="item-price">{price}</h3>
+
+      <EllipsisVertical />
     </span>
   );
 };

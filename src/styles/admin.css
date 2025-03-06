@@ -5,8 +5,7 @@
 
 .list-container {
   display: flex;
-  width: 700px;
-  height: 800px;
+  box-sizing: content-box;
   border: 1px solid white;
   border-radius: 30px;
   align-items: self-start;
@@ -14,4 +13,79 @@
   background: #09f;
   padding: 20px;
   flex-direction: column;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: column;
+  margin-left: 20px;
+  padding: 16px;
+  background: rgb(228, 231, 233);
+  width: 400px;
+  border-radius: 50px;
+}
+
+.search {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 10px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  margin: 75px 75px;
+  padding: 10px 10px 10px 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  border: 0;
+  box-shadow: #0000 10px;
+  padding: 10px 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  box-sizing: content-box;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.button .new-item-button {
+  background: green;
+}
+.button .new-item-button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+.button .delete-item-button {
+  background: red;
+}
+.button .delete-item-button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+.button .modify-item-button {
+  background: orange;
+}
+.button .modify-item-button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.title {
+  box-sizing: content-box;
+  background: greenyellow;
+  border-radius: 12px;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: bold;
 }

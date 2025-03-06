@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Layout from "./layouts/Layout";
-import Drugs from "./pages/Drugs";
 
 const App = () => {
   return (

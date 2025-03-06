@@ -3,7 +3,4 @@
 @tailwind utilities;
 
 @layer components {
-  .search-bar {
-    @apply;
-  }
 }
