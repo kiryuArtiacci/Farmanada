@@ -1,4 +1,3 @@
-import React from "react";
 import List from "../components/List/List";
 import "../styles/admin.css";
 import List_item from "../components/List/List_item";
