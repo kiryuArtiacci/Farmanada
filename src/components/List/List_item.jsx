@@ -1,4 +1,4 @@
-import React from "react";
+
 import { EllipsisVertical } from "lucide-react";
 const List_item = ({
   item_name,
