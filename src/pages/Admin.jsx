@@ -8,7 +8,6 @@ const Admin = () => {
     <div className="admin-page-container">
       {/*==>children*/}
       <Sidebar />
-      <Drugs />
     </div>
   );
 };

@@ -1,10 +1,7 @@
-// Importación de iconos desde la librería "lucide-react"
 import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
 import React from "react";
-// Importación de hooks de React
 import { createContext, useContext, useState } from "react";
-
-// Creación de un contexto para manejar el estado del sidebar
+import { Routes, Route, Link } from "react-router";
 const SidebarContext = createContext();
 
 // Componente principal del Sidebar
@@ -32,13 +29,15 @@ export default function Sidebar() {
           {/* Proveedor de contexto que permite compartir el estado "expanded" */}
           <SidebarContext.Provider value={{ expanded }}>
             <ul className="flex-1 px-3">
-              <SidebarItem icon="/public/house-icon.svg" text="HOME" />
-              <SidebarItem icon="/public/dashboard-icon.svg" text="DASHBOARD" />
-              <SidebarItem
-                icon="/public/employeer-icon.svg"
-                text="EMPLOYEERS"
-              />
-              <SidebarItem icon="/public/pill-icon.svg" text="DRUGS" />
+              <Link to="/employeers">
+                <SidebarItem
+                  icon="/public/employeer-icon.svg"
+                  text="EMPLOYEERS"
+                />
+              </Link>
+              <Link to="/drugs">
+                <SidebarItem icon="/public/pill-icon.svg" text="DRUGS" />
+              </Link>
               <SidebarItem icon="/public/warehouse-icon.svg" text="SUCURSALS" />
               <SidebarItem
                 icon="/public/shopping-cart-icon.svg"
