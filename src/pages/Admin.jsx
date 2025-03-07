@@ -1,5 +1,4 @@
 import Sidebar from "../components/Sidebar/Sidebar";
-import Drugs from "./Drugs";
 import "../styles/admin.css";
 
 const Admin = () => {

@@ -4,20 +4,18 @@ import List_item from "../components/List/List_item";
 import Search_Bar from "../components/Search_Bar/Search_Bar";
 import Sidebar from "../components/sidebar/Sidebar";
 
-const Drugs = () => {
+const Sucursals = () => {
   return (
     //parent
     <div className="admin-page-container">
       <Sidebar />
       {/*==>children*/}
       <List className="list-container">
-        <h1 className="title">Drugs: </h1>
+        <h1 className="title">Sucursals: </h1>
         <List_item
-          item_name="Levofloxaxina"
+          item_name="Sede Alta vista"
           img_src="/public/pill-icon.svg"
-          price="200$"
-          stock="100U"
-          description="Lorem ipsum"
+          description="Direccion"
         />
       </List>
 
@@ -26,4 +24,4 @@ const Drugs = () => {
   );
 };
 
-export default Drugs;
+export default Sucursals;

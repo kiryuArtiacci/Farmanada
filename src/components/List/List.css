@@ -11,7 +11,12 @@
 }
 
 .container-a:hover {
-  background: red;
+  background: rgb(81, 186, 218);
+  opacity: 0.9;
+  color: white;
+  transform: scale(1.05);
+  transition: ease-in-out;
+  transition-duration: 0.3s;
   cursor: pointer;
 }
 

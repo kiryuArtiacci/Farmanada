@@ -11,23 +11,24 @@ const Employeers = () => {
 
       {/*==>children*/}
       <List className="list-container">
+        <h1 className="title">Employeers: </h1>
         <List_item
           item_name="Julio Suarez"
           img_src="/public/pill-icon.svg"
           description="Lorem ipsum"
         />
         <List_item
-          item_name="Loratadina"
+          item_name="Ernesto Balbas"
           img_src="/public/pill-icon.svg"
           description="Lorem ipsum"
         />
         <List_item
-          item_name="Levofloxaxina"
+          item_name="Heirismar Marcano"
           img_src="/public/pill-icon.svg"
           description="Lorem ipsum"
         />
         <List_item
-          item_name="Levofloxaxina"
+          item_name="Rebecca Meyerowitz"
           img_src="/public/pill-icon.svg"
           description="Lorem ipsum"
         />

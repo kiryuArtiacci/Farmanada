@@ -1,7 +1,6 @@
 import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
-import React from "react";
 import { createContext, useContext, useState } from "react";
-import { Routes, Route, Link } from "react-router";
+import { Link } from "react-router";
 const SidebarContext = createContext();
 
 // Componente principal del Sidebar
@@ -35,18 +34,29 @@ export default function Sidebar() {
                   text="EMPLOYEERS"
                 />
               </Link>
+
               <Link to="/drugs">
                 <SidebarItem icon="/public/pill-icon.svg" text="DRUGS" />
               </Link>
-              <SidebarItem icon="/public/warehouse-icon.svg" text="SUCURSALS" />
-              <SidebarItem
-                icon="/public/shopping-cart-icon.svg"
-                text="PURCHASES"
-              />
-              <SidebarItem
-                icon="/public/microscope-icon.svg"
-                text="LABS/PROVIDERS"
-              />
+
+              <Link to="/sucursals">
+                <SidebarItem
+                  icon="/public/warehouse-icon.svg"
+                  text="SUCURSALS"
+                />
+              </Link>
+              <Link to="/purchases">
+                <SidebarItem
+                  icon="/public/shopping-cart-icon.svg"
+                  text="PURCHASES"
+                />
+              </Link>
+              <Link to="/labs">
+                <SidebarItem
+                  icon="/public/microscope-icon.svg"
+                  text="LABS/PROVIDERS"
+                />
+              </Link>
             </ul>{" "}
             {/* Aquí se renderizan los elementos del sidebar */}
           </SidebarContext.Provider>
