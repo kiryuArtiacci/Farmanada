@@ -8,6 +8,8 @@
   border-radius: 40px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   width: 650px;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
 }
 
 .container-a:hover {
@@ -15,9 +17,6 @@
   opacity: 0.9;
   color: white;
   transform: scale(1.05);
-  transition: ease-in-out;
-  transition-duration: 0.3s;
-  cursor: pointer;
 }
 
 .item-name {
