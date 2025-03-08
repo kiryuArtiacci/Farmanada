@@ -11,7 +11,9 @@ const List_User = ({
 }) => {
   return (
     <span className="container-a">
-      <img src={img_src} alt={item_name} className="item-icon" />
+        <div className="w-20 h-20 overflow-hidden rounded-full shadow-md">
+            <img src={img_src}  className="w-full h-full object-cover " />
+        </div>
 
       <h2 className="item-name">{item_name}</h2>
       <p className="item-description">{description}</p>
