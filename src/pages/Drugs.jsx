@@ -4,13 +4,15 @@ import List_item from "../components/List/List_item";
 import Search_Bar from "../components/Search_Bar/Search_Bar";
 import Sidebar from "../components/sidebar/Sidebar";
 import { useEffect, useState } from "react";
+import "../components/CRUDS/Leer.jsx"
+import { CARGAR } from "../components/CRUDS/Leer.jsx";
 
 const Drugs = () => {
   const [data, Setdata]= useState(null);
   const Drogas =[data];
 
 useEffect(()=>{
-  async function cargarMonodrogas() {
+ async function cargarMonodrogas() {
     try {
     const response = await fetch("http://localhost:7000/monodroga");
     if (!response.ok) throw new Error("Error en la solicitud: " + response.statusText);
