@@ -3,11 +3,12 @@
   align-items: center;
   justify-content: space-between;
   background: rgb(255, 255, 255);
-  margin: 16px 16px;
+  margin: 16px;
   padding: 10px;
   border-radius: 40px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  width: 650px;
+  width: 100%; /* Cambiado a 100% para adaptarse al tamaño de la pantalla */
+  max-width: 650px; /* Limitar el tamaño máximo */
   transition: ease-in-out;
   transition-duration: 0.3s;
 }
@@ -27,16 +28,59 @@
   font-size: 20px;
   margin-left: 10px;
 }
+
 .item-description {
   color: rgb(0, 0, 0);
   margin-right: 10px;
   opacity: 0.8;
 }
+
 .item-stock {
   color: rgb(151, 26, 26);
   margin-right: 10px;
 }
+
 .item-price {
   color: rgb(151, 26, 26);
   margin-right: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .container-a {
+    flex-direction: column; /* Cambiar dirección de flex a columna en pantallas pequeñas */
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .item-name {
+    font-size: 18px; /* Reducir tamaño de fuente */
+    margin-right: 5px;
+  }
+
+  .item-description {
+    font-size: 16px; /* Reducir tamaño de fuente */
+  }
+
+  .item-stock,
+  .item-price {
+    font-size: 16px; /* Reducir tamaño de fuente */
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-a {
+    padding: 8px;
+  }
+
+  .item-name {
+    font-size: 16px; /* Reducir aún más tamaño de fuente */
+  }
+
+  .item-description,
+  .item-stock,
+  .item-price {
+    font-size: 14px; /* Reducir tamaño de fuente */
+  }
 }

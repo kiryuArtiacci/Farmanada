@@ -5,18 +5,28 @@ import Search_Bar from "../components/Search_Bar/Search_Bar";
 import Sidebar from "../components/sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import "../components/CRUDS/Leer.jsx";
+// import "../components/List/List.css";
 
 const Drugs = () => {
   const [data, Setdata] = useState(null);
   const Drogas = [data];
-  const [id_delete, setIdDelete] = useState("");
   const [nuevo_valor, setNuevoValor] = useState("");
   const [id, setId] = useState("");
-  const [deploy, setDeploy] = useState(false);
+  const [deployAdd, setDeployAdd] = useState(false);
+  const [deployDel, setDeployDel] = useState(false);
+  const [deployMod, setDeployMod] = useState(false);
 
-  const toggleDeploy = () => {
-    // Esta funcion es la que hace el menu desplegable
-    setDeploy(!deploy);
+  const toggleDeployAdd = () => {
+    // Esta funcion es la que hace el menu desplegable Agregar
+    setDeployAdd(!deployAdd);
+  };
+  const toggleDeployDel = () => {
+    // Esta funcion es la que hace el menu desplegable Eliminar
+    setDeployDel(!deployDel);
+  };
+  const toggleDeployMod = () => {
+    // Esta funcion es la que hace el menu desplegable Modificar
+    setDeployMod(!deployMod);
   };
 
   const add_monodroga = async (name, quantity) => {
@@ -36,7 +46,7 @@ const Drugs = () => {
     }
   };
 
-  const borrar_monodroga = async () => {
+  const borrar_monodroga = async (id_delete) => {
     try {
       const response = await fetch("http://localhost:7000/monodroga", {
         method: "DELETE",
@@ -44,7 +54,7 @@ const Drugs = () => {
         body: JSON.stringify({ id_delete }),
       });
       if (response.ok) {
-        alert("Monodroga Eliminada");
+        alert(`Monodroga Eliminada ${id_delete}`);
       } else {
         alert("Error al eliminar monodroga");
       }
@@ -94,13 +104,21 @@ const Drugs = () => {
       {data && ( // Verificamos si data tiene un valor
         <List className="list-container">
           <h1 className="title">Drugs: </h1>
+          <div className="descriptions">
+            <h2 className="description-item">ID</h2>
+            <h2 className="description-item">Name</h2>
+            <h2 className="description-item">Description</h2>
+            <h2 className="description-item">Stock</h2>
+            <h2 className="description-item">Price</h2>
+          </div>
           {Array.isArray(data) &&
             data.map(
               (
                 item, //Verificamos si data es un array, y si lo es, lo mapeamos.
               ) => (
                 <List_item
-                  key={item.id} //Agregamos una key unica, al item.
+                  key={item.id}
+                  item_id={item.id} //Agregamos una key unica, al item. y la mostramos
                   item_name={item.nombre} //Usamos item.nombre, ya que data es un array de objetos.
                   img_src="/public/pill-icon.svg"
                   price="200$"
@@ -114,25 +132,19 @@ const Drugs = () => {
 
       <Search_Bar>
         <div className="button">
-          <button className="button new-item-button" onClick={toggleDeploy}>
+          <button className="button new-item-button" onClick={toggleDeployAdd}>
             Agregar
           </button>
 
-          {deploy && <New_drug onSubmit={add_monodroga} />}
+          {deployAdd && <New_drug onSubmit={add_monodroga} />}
 
-          <input
-            type="number"
-            className="text-black"
-            value={id_delete}
-            placeholder="Eliminar monodroga"
-            onChange={(e) => setIdDelete(e.target.value)}
-          />
           <button
             className="button delete-item-button"
-            onClick={borrar_monodroga}
+            onClick={toggleDeployDel}
           >
             Eliminar
           </button>
+          {deployDel && <Delete_drug onSubmit={borrar_monodroga} />}
 
           <form
             onSubmit={(e) => {
@@ -202,6 +214,35 @@ const New_drug = ({ onSubmit }) => {
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           required
+        />
+        <input type="submit" value="Aceptar" className="submit-button" />
+      </form>
+    </div>
+  );
+};
+
+const Delete_drug = ({ onSubmit }) => {
+  const [id_delete, setIdDelete] = useState("");
+
+  const handleSubmitDel = (elem) => {
+    elem.preventDefault();
+    onSubmit(id_delete);
+    setIdDelete("");
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmitDel} className="add-item-container">
+        <div className="add-title-container">
+          <h2 className="add-title">Remove</h2>
+        </div>
+        <input
+          type="text"
+          placeholder="Item name"
+          className="form-item"
+          required
+          value={id_delete}
+          onChange={(elem) => setIdDelete(elem.target.value)}
         />
         <input type="submit" value="Aceptar" className="submit-button" />
       </form>
