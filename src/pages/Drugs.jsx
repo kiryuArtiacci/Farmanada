@@ -7,8 +7,7 @@ import { useEffect, useState } from "react";
 
 const Drugs = () => {
   const [data, Setdata]= useState(null);
-
-const Drogas =[data];
+  const Drogas =[data];
 
 useEffect(()=>{
   async function cargarMonodrogas() {
@@ -21,7 +20,7 @@ useEffect(()=>{
     Setdata(dataRecibida);
 
     } catch (error) {
-    console.error("Error al cargar los monodrogas:", error);
+    console.error("Error al cargar los Empleados:", error);
     }
    
   }
@@ -29,9 +28,11 @@ useEffect(()=>{
 
 }, [])
 
+
   return (
           //parent
     <div className="admin-page-container">
+
     <Sidebar />
     {data && ( // Verificamos si data tiene un valor
       <List className="list-container">

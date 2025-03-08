@@ -1,9 +1,8 @@
-
 import { EllipsisVertical } from "lucide-react";
 
 
 
-const List_item = ({
+const List_User = ({
   item_name,
   img_src,
   description,
@@ -24,9 +23,6 @@ const List_item = ({
   );
 };
 
-
-
-
-export default List_item ;
+export default List_User ;
 
 
