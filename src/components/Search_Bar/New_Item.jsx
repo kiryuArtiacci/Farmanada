@@ -20,7 +20,7 @@ const New_Item = () => {
         <input
           type="submit"
           placeholder="Aceptar"
-          className="form-item"
+          className="submit-button"
           required
         />
       </form>

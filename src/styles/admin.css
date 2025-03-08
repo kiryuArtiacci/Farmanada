@@ -96,6 +96,8 @@
   align-items: center;
   box-sizing: content-box;
   flex-direction: column;
+  transition: ease-in-out;
+  transition-duration: 0.5s;
 }
 
 .form-item {
@@ -116,4 +118,19 @@
   font-size: 20px;
   font-weight: bold;
   color: white;
+}
+
+.submit-button {
+  border: 0;
+  background: green;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.submit-button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+  cursor: pointer;
 }
