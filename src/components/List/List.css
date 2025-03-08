@@ -17,6 +17,7 @@
   opacity: 0.9;
   color: white;
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .item-name {

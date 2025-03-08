@@ -11,9 +11,9 @@ const Labs = () => {
       <Sidebar />
       {/*==>children*/}
       <List className="list-container">
-        <h1 className="title">Sucursals: </h1>
+        <h1 className="title">Providers: </h1>
         <List_item
-          item_name="Sede Alta vista"
+          item_name="Laboratorios Parzival"
           img_src="/public/pill-icon.svg"
           description="Direccion"
         />

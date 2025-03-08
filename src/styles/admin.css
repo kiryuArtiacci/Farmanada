@@ -89,3 +89,48 @@
   font-size: 25px;
   font-weight: bold;
 }
+
+.add-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  flex-direction: column;
+  transition: ease-in-out;
+  transition-duration: 0.5s;
+}
+
+.form-item {
+  margin-bottom: 16px;
+  color: black;
+}
+
+.add-title-container {
+  display: flex;
+  background: #09f;
+  box-sizing: content-box;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  border-radius: 25px;
+}
+
+.add-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.submit-button {
+  border: 0;
+  background: green;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.submit-button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+  cursor: pointer;
+}

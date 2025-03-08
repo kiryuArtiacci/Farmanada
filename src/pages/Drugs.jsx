@@ -6,7 +6,11 @@ import Sidebar from "../components/sidebar/Sidebar";
 import { useEffect, useState } from "react";
 
 const Drugs = () => {
+<<<<<<< HEAD
 const [data, Setdata]= useState(null);
+=======
+  const [data, Setdata]= useState(null);
+>>>>>>> 8582056c740720088837475b21e5cc24ae2742b0
 
 const Drogas =[data];
 
@@ -29,10 +33,14 @@ useEffect(()=>{
 
 }, [])
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8582056c740720088837475b21e5cc24ae2742b0
   return (
-    //parent
+          //parent
     <div className="admin-page-container">
+<<<<<<< HEAD
       <Sidebar />
       {/*==>children*/}
       {data && ( // Verificamos si data tiene un valor
@@ -50,9 +58,27 @@ useEffect(()=>{
           ))}
         </List>
       )}
+=======
+    <Sidebar />
+    {data && ( // Verificamos si data tiene un valor
+      <List className="list-container">
+        <h1 className="title">Drugs: </h1>
+        {Array.isArray(data) && data.map((item) => ( //Verificamos si data es un array, y si lo es, lo mapeamos.
+          <List_item
+            key={item.id} //Agregamos una key unica, al item.
+            item_name={item.nombre} //Usamos item.nombre, ya que data es un array de objetos.
+            img_src="/public/pill-icon.svg"
+            price="200$"
+            stock="100U"
+            description="Lorem ipsum"
+          />
+        ))}
+      </List>
+    )}
+>>>>>>> 8582056c740720088837475b21e5cc24ae2742b0
 
-      <Search_Bar className="search-bar" />
-    </div>
+    <Search_Bar className="search-bar" />
+  </div>
   );
 };
 
