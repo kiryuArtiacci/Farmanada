@@ -1,6 +1,8 @@
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
+
+
 const Search_Bar = () => {
   const [id_delete, Setid_delete] = useState("");
   const [name, Setname] = useState("");
@@ -18,7 +20,7 @@ const Search_Bar = () => {
       .then((data) => alert("Monodroga Agregada"))
       .catch((error) => console.error("Error:", error));
   };
-  
+
   const borrar_monodroga = async () => {
     // Función asíncrona para eliminar una monodroga en la base de datos
 
