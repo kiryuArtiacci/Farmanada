@@ -89,3 +89,31 @@
   font-size: 25px;
   font-weight: bold;
 }
+
+.add-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  flex-direction: column;
+}
+
+.form-item {
+  margin-bottom: 16px;
+  color: black;
+}
+
+.add-title-container {
+  display: flex;
+  background: #09f;
+  box-sizing: content-box;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  border-radius: 25px;
+}
+
+.add-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}

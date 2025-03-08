@@ -1,6 +1,14 @@
 import { Search } from "lucide-react";
+import { useState } from "react";
+import New_item from "./New_Item";
 
 const Search_Bar = () => {
+  const [mostrarElemento, setElemento] = useState(false);
+
+  const handleClick = () => {
+    setElemento(!mostrarElemento);
+  };
+
   return (
     <div className="search-bar">
       <fieldset className="search-container">
@@ -15,9 +23,12 @@ const Search_Bar = () => {
         </div>
 
         <div className="button">
-          <button className="button new-item-button">Agregar</button>
+          <button onClick={handleClick} className="button new-item-button">
+            Agregar
+          </button>
           <button className="button delete-item-button">Eliminar</button>
           <button className="button modify-item-button">Modificar</button>
+          {mostrarElemento ? <New_item /> : null}
         </div>
       </fieldset>
     </div>
