@@ -197,7 +197,7 @@ const New_drug = ({ onSubmit }) => {
     <div>
       <form onSubmit={handleSubmit} className="add-item-container">
         <div className="add-title-container">
-          <h2 className="add-title">New item</h2>
+          <h2 className="add-title">New</h2>
         </div>
         <input
           type="text"

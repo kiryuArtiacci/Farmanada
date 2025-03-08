@@ -1,133 +1,135 @@
 .admin-page-container {
   display: flex;
-  flex-direction: column; /* En pantallas pequeñas, los elementos se apilan */
-  align-items: center;
   height: 100%;
-  padding: 20px;
 }
 
 .list-container {
   display: flex;
-  box-sizing: border-box;
+  box-sizing: content-box;
   border: 1px solid white;
   border-radius: 30px;
-  align-items: flex-start;
+  align-items: self-start;
   justify-content: left;
   background: #09f;
   padding: 20px;
   flex-direction: column;
-  width: 100%;
-  max-width: 800px;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   flex-direction: column;
+  margin-left: 20px;
   padding: 16px;
   background: rgb(228, 231, 233);
-  width: 100%;
-  max-width: 400px;
+  width: 400px;
   border-radius: 50px;
+}
+
+.search {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 10px;
 }
 
 .search-container {
   display: flex;
   flex-direction: column;
+  margin: 75px 75px;
+  padding: 10px 10px 10px 10px;
   align-items: center;
   justify-content: center;
-  margin: 50px 20px;
-  padding: 10px;
-  width: 100%;
 }
 
 .button {
-  width: 120px;
+  width: 100px;
   height: 50px;
   border-radius: 25px;
   border: 0;
-  padding: 10px;
+  box-shadow: #0000 10px;
+  padding: 10px 10px;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 15px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
+  box-sizing: content-box;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
 }
 
-.new-item-button {
+.button .new-item-button {
   background: green;
 }
-.new-item-button:hover {
+.button .new-item-button:hover {
   opacity: 0.7;
   transform: scale(1.1);
 }
-.delete-item-button {
+.button .delete-item-button {
   background: red;
 }
-.delete-item-button:hover {
+.button .delete-item-button:hover {
   opacity: 0.7;
   transform: scale(1.1);
 }
-.modify-item-button {
+.button .modify-item-button {
   background: orange;
 }
-.modify-item-button:hover {
+.button .modify-item-button:hover {
   opacity: 0.7;
   transform: scale(1.1);
 }
 
 .title {
+  box-sizing: content-box;
   background: greenyellow;
   border-radius: 12px;
-  padding: 10px;
+  padding: 10px 10px 10px 10px;
   margin-bottom: 15px;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
-  text-align: center;
-  width: 100%;
 }
 
 .add-item-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: content-box;
   flex-direction: column;
-  transition: 0.5s ease-in-out;
-  width: 100%;
+  transition: ease-in-out;
+  transition-duration: 0.5s;
+  margin-left: 20px;
 }
 
 .form-item {
   margin-bottom: 16px;
   color: black;
-  text-align: center;
 }
 
 .add-title-container {
   display: flex;
   background: #09f;
-  box-sizing: border-box;
+  box-sizing: content-box;
   margin-bottom: 16px;
   margin-top: 16px;
   border-radius: 25px;
-  justify-content: center;
-  padding: 10px;
 }
 
 .add-title {
   font-size: 20px;
   font-weight: bold;
   color: white;
-  text-align: center;
+  padding: 10px 10px 10px 10px;
 }
 
 .submit-button {
   border: 0;
   background: green;
   border-radius: 10px;
-  padding: 10px;
-  transition: 0.3s ease-in-out;
+  padding: 10px 10px 10px 10px;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+  margin-bottom: 20px;
 }
 
 .submit-button:hover {
@@ -143,85 +145,22 @@
 }
 
 .descriptions {
-  display: grid;
-  grid-template-columns: 50px 1fr 2fr 1fr 1fr;
-  align-items: center;
+  display: flex;
+  align-items: center; /* Alinea verticalmente */
+  gap: 10px; /* Espaciado entre los elementos */
   background: rgb(255, 255, 255);
   justify-content: center;
   padding: 10px;
   border-radius: 40px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  width: 100%;
-  max-width: 650px;
-  transition: 0.3s ease-in-out;
-  margin: 12px auto;
+  width: 650px;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+  margin-left: 12px;
 }
 
 .description-item {
+  margin-left: 50px;
   font-size: 19px;
   padding-right: 5px;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-  .list-container {
-    width: 90%;
-    padding: 15px;
-  }
-
-  .search-bar {
-    width: 90%;
-  }
-
-  .descriptions {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 90%;
-    padding: 15px;
-  }
-
-  .description-item {
-    margin-left: 0;
-    font-size: 16px;
-  }
-
-  .button {
-    width: 100px;
-    font-size: 14px;
-  }
-
-  .title {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .list-container {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .search-bar {
-    width: 100%;
-  }
-
-  .descriptions {
-    flex-direction: column;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .description-item {
-    font-size: 14px;
-  }
-
-  .button {
-    width: 90px;
-    font-size: 12px;
-  }
-
-  .title {
-    font-size: 18px;
-  }
 }
