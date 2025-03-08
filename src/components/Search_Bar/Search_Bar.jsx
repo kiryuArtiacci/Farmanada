@@ -4,9 +4,24 @@ import New_item from "./New_Item";
 
 const Search_Bar = () => {
   const [mostrarElemento, setElemento] = useState(false);
+  const [values, setValues] = useState({
+    nombre: '',
+    apellido: '',
+    telefono: '',
+    email: '',
+    direccion: '',
+    fecha_ingreso	:('YYYY/MM/DD'),
+  })
 
-  const handleClick = () => {
-    setElemento(!mostrarElemento);
+  const Guardar = async () => {
+    {/*fetch("http://localhost:7000/monodroga", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({name})
+  })
+  .then(response => response.json())
+  .then(data => alert('Guardado'))
+  .catch(error => console.error("Error:", error));*/}
   };
 
   return (
@@ -23,7 +38,7 @@ const Search_Bar = () => {
         </div>
 
         <div className="button">
-          <button onClick={handleClick} className="button new-item-button">
+          <button onClick={()=>{console.log('hola mundo')}} className="button new-item-button">
             Agregar
           </button>
           <button className="button delete-item-button">Eliminar</button>
