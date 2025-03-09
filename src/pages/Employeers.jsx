@@ -43,9 +43,9 @@ const Employeers = () => {
                   key={item.id} //Agregamos una key unica, al item.
                   item_name={item.nombre} //Usamos item.nombre, ya que data es un array de objetos.
                   img_src={item.img}
-                  price="200$"
-                  stock="100U"
-                  description="Lorem ipsum"
+                  price={item.email}
+                  stock={item.telefono}
+                  description={item.apellido}
                 />
               ),
             )}

@@ -9,6 +9,7 @@ import "../components/CRUDS/Leer.jsx";
 
 const Drugs = () => {
   const [data, Setdata] = useState(null);
+  const [num, Setnum]= useState('');
   const Drogas = [data];
   const [deployAdd, setDeployAdd] = useState(false);
   const [deployDel, setDeployDel] = useState(false);
@@ -42,7 +43,12 @@ const Drugs = () => {
     } catch (error) {
       console.error("Error:", error);
     }
+
   };
+
+  const borrar = (id)=>{
+     Setnum(id);
+  }
 
   const borrar_monodroga = async (id_delete) => {
     try {
@@ -102,27 +108,34 @@ const Drugs = () => {
       {data && ( // Verificamos si data tiene un valor
         <List className="list-container">
           <h1 className="title">Drugs: </h1>
-          <div className="descriptions">
+          {/*<div className="descriptions">
             <h2 className="description-item">ID</h2>
             <h2 className="description-item">Name</h2>
             <h2 className="description-item">Description</h2>
             <h2 className="description-item">Stock</h2>
             <h2 className="description-item">Price</h2>
-          </div>
+          </div>*/}
           {Array.isArray(data) &&
             data.map(
               (
                 item, //Verificamos si data es un array, y si lo es, lo mapeamos.
               ) => (
-                <List_item
-                  key={item.id}
-                  item_id={item.id} //Agregamos una key unica, al item. y la mostramos
-                  item_name={item.nombre} //Usamos item.nombre, ya que data es un array de objetos.
-                  img_src="/public/pill-icon.svg"
-                  price="200$"
-                  stock="100U"
-                  description="Lorem ipsum"
-                />
+                <div>
+
+                  <List_item
+                    key={item.id}
+                    item_id={item.id} //Agregamos una key unica, al item. y la mostramos
+                    item_name={item.nombre} //Usamos item.nombre, ya que data es un array de objetos.
+                    img_src="/public/pill-icon.svg"
+                    price="200$"
+                    stock="100U"
+                    description="Lorem ipsum"
+                    DeleteOnClick={toggleDeployMod}
+                    ChangeOnClick={toggleDeployMod}
+                  />
+                  
+                </div>
+                
               ),
             )}
         </List>

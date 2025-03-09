@@ -1,9 +1,9 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
+import '../../styles/admin.css'
 
 
-
-const Search_Bar = () => {
+const Search_Bar = ({children}) => {
   const [id_delete, setIdDelete] = useState("");
   const [nuevo_valor, setNuevoValor] = useState("");
   const [id, setId] = useState("");
@@ -64,7 +64,7 @@ const Search_Bar = () => {
     }
   };
 
-/*const Search_Bar = ({ children }) => {
+
   return (
     <div className="search-bar">
       <fieldset className="search-container">
@@ -81,7 +81,7 @@ const Search_Bar = () => {
         {children}
       </fieldset>
     </div>
-  );*/
+  );
 };
 
 export default Search_Bar;
