@@ -7,10 +7,134 @@ import { useEffect, useState } from "react";
 import "../components/CRUDS/Leer.jsx";
 // import "../components/List/List.css";
 
+
+const New_drug = ({ onSubmit }) => {
+  const [name, setName] = useState("");
+  const [quantity, setQuantity] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(name, quantity);
+    setName("");
+    setQuantity("");
+  };
+  //lo que sale si aprietas Agregar
+  return (
+    <div>
+      <form onSubmit={handleSubmit} className="add-item-container">
+        <div className="add-title-container">
+          <h2 className="add-title">New</h2>
+        </div>
+        <input
+          type="text"
+          placeholder="Item name"
+          className="form-item"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <input
+          type="number"
+          placeholder="Quantity"
+          className="form-item"
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
+          required
+        />
+        <input type="submit" value="Aceptar" className="submit-button" />
+      </form>
+    </div>
+  );
+};
+
+const Delete_drug = ({ onSubmit }) => {
+  const [id_delete, setIdDelete] = useState("");
+
+  const handleSubmitDel = (elem) => {
+    elem.preventDefault();
+    onSubmit(id_delete);
+    setIdDelete("");
+  };
+  //lo que sale si aprietas Eliminar
+  return (
+    <div>
+      <form onSubmit={handleSubmitDel} className="add-item-container">
+        <div className="add-title-container">
+          <h2 className="add-title">Remove</h2>
+        </div>
+        <input
+          type="text"
+          placeholder="Item ID"
+          className="form-item"
+          required
+          value={id_delete}
+          onChange={(elem) => setIdDelete(elem.target.value)}
+        />
+        <input type="submit" value="Aceptar" className="submit-button" />
+      </form>
+    </div>
+  );
+};
+
+const Modify_drug = ({ onSubmit }) => {
+  const [nuevo_valor, setNuevoValor] = useState("");
+  const [id, setId] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(nuevo_valor, id);
+    setNuevoValor("");
+    setId("");
+  };
+  //Lo que sale si pones modificar
+  return (
+    <div>
+      <form onSubmit={handleSubmit} className="add-item-container">
+        <div className="add-title-container">
+          <h2 className="add-title">Modify</h2>
+        </div>
+        <input
+          type="text"
+          className="mb-4 text-black"
+          value={id}
+          placeholder="Ingrese el id"
+          onChange={(e) => setId(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          className="text-black"
+          value={nuevo_valor}
+          placeholder="Ingrese el nuevo valor"
+          onChange={(e) => setNuevoValor(e.target.value)}
+          required
+        />
+        <input type="submit" value="Aceptar" className="submit-button" />
+      </form>
+    </div>
+  );
+};
+
+//------------COMPONENTE PRINCIPAL DROGASS------------
+/** 
+* .---------------------------------------------------------------------. 
+* | ____ ___ __ __ ____ ___ _ _ _____ _ _ _____ _____ | 
+* | / ___/ _ \| \/ | _\/_\| \ | | ____| \ | |_ _| ____|| 
+* || | | | | | |\/| | |_) | | | | \| | _| | \| | | | | _| | 
+* || |__| |_| | | | | __/| |_| | |\ | |___| |\ | | | | |___ | 
+* | \____\___/|_|__|_|_|_ _\___/|_|_\_|_____|_|_\_| |_| |_____|| 
+* || _\| _ \|_ _| \ | |/ ___|_ _| _\/\ | | | 
+* || |_) | |_) || || \| | | | || |_) / _ \ | | | 
+* || __/| _ < | || |\ | |___ | || __/ ___ \| |___ | 
+* ||_|__ |_|_\_\___|_| \_|\____|___|_|_/_/ \_\_____| | 
+* || _\| _ \ / _ \ / ___| /\/___| | 
+* || | | | |_) | | | | | _ / _ \ \___ \ | 
+* || |_| | _ <| |_| | |_| |/ ___ \ ___) | | 
+* ||____/|_| \_\\___/ \____/_/ \_\____/ | 
+* '-----------------------------------------------------------------------' 
+*/
 const Drugs = () => {
   const [data, Setdata] = useState(null);
-  const [num, Setnum]= useState('');
-  const Drogas = [data];
   const [deployAdd, setDeployAdd] = useState(false);
   const [deployDel, setDeployDel] = useState(false);
   const [deployMod, setDeployMod] = useState(false);
@@ -84,6 +208,7 @@ const Drugs = () => {
     }
   };
 
+//****---useEffect CARGAR DATOS--****
   useEffect(() => {
     async function cargarMonodrogas() {
       try {
@@ -105,16 +230,9 @@ const Drugs = () => {
     //parent
     <div className="admin-page-container">
       <Sidebar />
-      {data && ( // Verificamos si data tiene un valor
+      {data && ( // RENDERIZADO DE LA DATA
         <List className="list-container">
           <h1 className="title">Drugs: </h1>
-          {/*<div className="descriptions">
-            <h2 className="description-item">ID</h2>
-            <h2 className="description-item">Name</h2>
-            <h2 className="description-item">Description</h2>
-            <h2 className="description-item">Stock</h2>
-            <h2 className="description-item">Price</h2>
-          </div>*/}
           {Array.isArray(data) &&
             data.map(
               (
@@ -172,109 +290,4 @@ const Drugs = () => {
 
 export default Drugs;
 
-const New_drug = ({ onSubmit }) => {
-  const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(name, quantity);
-    setName("");
-    setQuantity("");
-  };
-
-  return (
-    <div>
-      <form onSubmit={handleSubmit} className="add-item-container">
-        <div className="add-title-container">
-          <h2 className="add-title">New</h2>
-        </div>
-        <input
-          type="text"
-          placeholder="Item name"
-          className="form-item"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          type="number"
-          placeholder="Quantity"
-          className="form-item"
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-          required
-        />
-        <input type="submit" value="Aceptar" className="submit-button" />
-      </form>
-    </div>
-  );
-};
-
-const Delete_drug = ({ onSubmit }) => {
-  const [id_delete, setIdDelete] = useState("");
-
-  const handleSubmitDel = (elem) => {
-    elem.preventDefault();
-    onSubmit(id_delete);
-    setIdDelete("");
-  };
-
-  return (
-    <div>
-      <form onSubmit={handleSubmitDel} className="add-item-container">
-        <div className="add-title-container">
-          <h2 className="add-title">Remove</h2>
-        </div>
-        <input
-          type="text"
-          placeholder="Item name"
-          className="form-item"
-          required
-          value={id_delete}
-          onChange={(elem) => setIdDelete(elem.target.value)}
-        />
-        <input type="submit" value="Aceptar" className="submit-button" />
-      </form>
-    </div>
-  );
-};
-
-const Modify_drug = ({ onSubmit }) => {
-  const [nuevo_valor, setNuevoValor] = useState("");
-  const [id, setId] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(nuevo_valor, id);
-    setNuevoValor("");
-    setId("");
-  };
-
-  return (
-    <div>
-      <form onSubmit={handleSubmit} className="add-item-container">
-        <div className="add-title-container">
-          <h2 className="add-title">Modify</h2>
-        </div>
-        <input
-          type="text"
-          className="mb-4 text-black"
-          value={id}
-          placeholder="Ingrese el id"
-          onChange={(e) => setId(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          className="text-black"
-          value={nuevo_valor}
-          placeholder="Ingrese el nuevo valor"
-          onChange={(e) => setNuevoValor(e.target.value)}
-          required
-        />
-        <input type="submit" value="Aceptar" className="submit-button" />
-      </form>
-    </div>
-  );
-};

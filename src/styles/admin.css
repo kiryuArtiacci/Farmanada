@@ -11,7 +11,7 @@
   border-radius: 30px;
   align-items: self-start;
   justify-content: left;
-  background: #09f;
+  background: #93c5fd;
   padding: 20px;
   flex-direction: column;
 }
@@ -26,6 +26,7 @@
   background: rgb(228, 231, 233);
   width: 20%;
   border-radius: 50px;
+  margin-top: 16px;
 }
 
 .search {
@@ -83,7 +84,6 @@
 
 .title {
   box-sizing: content-box;
-  background: greenyellow;
   border-radius: 12px;
   padding: 10px 10px 10px 10px;
   margin-bottom: 15px;

@@ -1,70 +1,7 @@
 import { Search } from "lucide-react";
-import { useState } from "react";
-import '../../styles/admin.css'
 
 
-const Search_Bar = ({children}) => {
-  const [id_delete, setIdDelete] = useState("");
-  const [nuevo_valor, setNuevoValor] = useState("");
-  const [id, setId] = useState("");
-  const [deploy, setDeploy] = useState(false);
-
-  const toggleDeploy = () => {
-    setDeploy(!deploy);
-  };
-  const add_monodroga = async (name, quantity) => {
-    try {
-      const response = await fetch("http://localhost:7000/monodroga", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, quantity }),
-      });
-      if (response.ok) {
-        alert("Monodroga Agregada");
-      } else {
-        alert("Error al agregar monodroga");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-
-  const borrar_monodroga = async () => {
-    try {
-      const response = await fetch("http://localhost:7000/monodroga", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id_delete }),
-      });
-      if (response.ok) {
-        alert("Monodroga Eliminada");
-      } else {
-        alert("Error al eliminar monodroga");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  const modificar_monodroga = async () => {
-    try {
-      const response = await fetch("http://localhost:7000/monodroga", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nuevo_valor, id }),
-      });
-      if (response.ok) {
-        alert("Monodroga Modificada");
-      } else {
-        alert("Error al modificar monodroga");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-
+const Search_Bar = ({ children }) => {
   return (
     <div className="search-bar">
       <fieldset className="search-container">
@@ -79,6 +16,7 @@ const Search_Bar = ({children}) => {
           />
         </div>
         {children}
+        {/* Integrando New_Item aquí */}
       </fieldset>
     </div>
   );
