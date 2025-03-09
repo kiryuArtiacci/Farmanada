@@ -146,7 +146,7 @@ const SucursalManager = () => {
             onChange={(e) => handleInputChange(e, setEmail)}
             className="input-field" // Apply input field style
           />
-          <button onClick={addSucursal} className="button">
+          <button onClick={addSucursal} className="button ml-12">
             Agregar Sucursal
           </button>{" "}
           {/* Apply button style */}
@@ -176,7 +176,7 @@ const SucursalManager = () => {
             onChange={(e) => handleInputChange(e, setNuevoValor)}
             className="input-field" // Apply input field style
           />
-          <button onClick={modificarSucursal} className="button">
+          <button onClick={modificarSucursal} className="button ml-12">
             Modificar Sucursal
           </button>{" "}
           {/* Apply button style */}
@@ -192,14 +192,14 @@ const SucursalManager = () => {
             onChange={(e) => handleInputChange(e, setIdDelete)}
             className="input-field" // Apply input field style
           />
-          <button onClick={borrarSucursal} className="button">
+          <button onClick={borrarSucursal} className="button ml-12">
             Borrar Sucursal
           </button>{" "}
           {/* Apply button style */}
         </div>
         <div>
           <h3>Listar Sucursales (Opcional - para pruebas)</h3>
-          <button onClick={getSucursales} className="button">
+          <button onClick={getSucursales} className="button ml-12">
             Cargar Sucursales
           </button>{" "}
           {/* Apply button style */}
