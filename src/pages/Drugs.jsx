@@ -169,7 +169,7 @@ const New_drug = ({ onSubmit }) => {
     setName("");
     setQuantity("");
   };
-
+  //lo que sale si aprietas Agregar
   return (
     <div>
       <form onSubmit={handleSubmit} className="add-item-container">
@@ -206,7 +206,7 @@ const Delete_drug = ({ onSubmit }) => {
     onSubmit(id_delete);
     setIdDelete("");
   };
-
+  //lo que sale si aprietas Eliminar
   return (
     <div>
       <form onSubmit={handleSubmitDel} className="add-item-container">
@@ -215,7 +215,7 @@ const Delete_drug = ({ onSubmit }) => {
         </div>
         <input
           type="text"
-          placeholder="Item name"
+          placeholder="Item ID"
           className="form-item"
           required
           value={id_delete}
@@ -237,7 +237,7 @@ const Modify_drug = ({ onSubmit }) => {
     setNuevoValor("");
     setId("");
   };
-
+  //Lo que sale si pones modificar
   return (
     <div>
       <form onSubmit={handleSubmit} className="add-item-container">

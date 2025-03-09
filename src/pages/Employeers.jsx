@@ -4,7 +4,7 @@ import List from "../components/List/List";
 import "../styles/admin.css";
 import List_User from "../components/List/List_User";
 import Sidebar from "../components/sidebar/Sidebar";
-import Search_Bar from "../components/Search_Bar/Search_Bar";
+import SearchBarEmployeer from "../components/Search_Bar/SearchBarEmployeers";
 
 const Employeers = () => {
   const [data, Setdata] = useState(null);
@@ -52,7 +52,7 @@ const Employeers = () => {
         </List>
       )}
 
-      <Search_Bar className="search-bar" />
+      <SearchBarEmployeer />
     </div>
   );
 };

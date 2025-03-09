@@ -10,9 +10,9 @@ const Category = () => {
           <div className="relative flex h-[320px] items-end rounded-3xl bg-gradient-to-br from-slate-300 to-slate-500 py-10 pl-5 text-white">
             <div>
               <div className="mb-4">
-                <p>Disfruta</p>
-                <p>nose w</p>
-                <p>Placeholder momento</p>
+                <p>Placeholder</p>
+                <p>descripcion</p>
+                <p>Placeholder</p>
               </div>
             </div>
             <img src={imagen2} alt="" className="absolute top-5 w-[200px]" />
@@ -21,9 +21,9 @@ const Category = () => {
           <div className="relative flex h-[320px] items-end rounded-3xl bg-gradient-to-br from-slate-300 to-slate-500 py-10 pl-5 text-white">
             <div>
               <div className="mb-4">
-                <p>Disfruta</p>
-                <p>nose w</p>
-                <p>Placeholder momento</p>
+                <p>Placeholder</p>
+                <p>Descripcion</p>
+                <p>Placeholder</p>
               </div>
             </div>
             <img src={imagen2} alt="" className="absolute top-5 w-[200px]" />

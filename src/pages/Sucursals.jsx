@@ -1,7 +1,7 @@
 import List from "../components/List/List";
 import "../styles/admin.css";
 import List_item from "../components/List/List_item";
-import Search_Bar from "../components/Search_Bar/Search_Bar";
+import SearchbarSucursal from "../components/Search_Bar/SearchbarSucursal";
 import Sidebar from "../components/sidebar/Sidebar";
 
 const Sucursals = () => {
@@ -19,7 +19,7 @@ const Sucursals = () => {
         />
       </List>
 
-      <Search_Bar className="search-bar" />
+      <SearchbarSucursal />
     </div>
   );
 };
