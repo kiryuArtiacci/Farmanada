@@ -34,7 +34,7 @@ const [deployMod, setDeployMod] = useState(false);
   useEffect(() => {
     async function cargarMonodrogas() {
       try {
-        const response = await fetch("http://localhost:7000/pedido");
+        const response = await fetch("http://localhost:7000/monodroga");
         if (!response.ok)
           throw new Error("Error en la solicitud: " + response.statusText);
 
@@ -70,7 +70,7 @@ const [deployMod, setDeployMod] = useState(false);
                     <List_item
                         key={item.id}
                         item_id={item.id} //Agregamos una key unica, al item. y la mostramos
-                        item_name='{item.forma_pago} '//Usamos item.nombre, ya que data es un array de objetos.
+                        item_name='{item.id_empleado}'//Usamos item.nombre, ya que data es un array de objetos.
                         img_src="/public/pill-icon.svg"
                         price="200$"
                         stock="100U"
