@@ -70,12 +70,12 @@ const Search_Bar = ({children}) => {
       <fieldset className="search-container">
         <h1 className="title">Search bar</h1>
 
-        <div className="group relative flex items-center sm:block">
+        <div className="group relative flex items-center sm:block ">
           <Search className="absolute left-3 top-2 text-xl text-gray-600 duration-200 group-hover:text-primary dark:text-gray-400" />
           <input
             type="text"
             placeholder="Buscar..."
-            className="w-[300px] rounded-full border border-gray-500 py-2 pl-10 pr-3 transition-all duration-300 focus:outline-none dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:group-hover:bg-gray-800"
+            className="w-[200px] rounded-full border border-gray-500 py-2 pl-10 pr-3 transition-all duration-300 focus:outline-none dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:group-hover:bg-gray-800"
           />
         </div>
         {children}
