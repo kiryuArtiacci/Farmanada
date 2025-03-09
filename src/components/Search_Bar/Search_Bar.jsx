@@ -1,56 +1,75 @@
 import { Search } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import New_Item from "./New_Item"; // Importamos el componente
 
 
 
 const Search_Bar = () => {
-  const [id_delete, Setid_delete] = useState("");
-  const [name, Setname] = useState("");
-  const [nuevo_valor, Setnuevo_valor] = useState("");
-  const [id, Setid] = useState("");
+  const [id_delete, setIdDelete] = useState("");
+  const [nuevo_valor, setNuevoValor] = useState("");
+  const [id, setId] = useState("");
+  const [deploy, setDeploy] = useState(false);
 
-  const add_monodroga = async () => {
-    // Función asíncrona para eliminar una monodroga en la base de datos
-    fetch("http://localhost:7000/monodroga", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name }),
-    })
-      .then((response) => response.json())
-      .then((data) => alert("Monodroga Agregada"))
-      .catch((error) => console.error("Error:", error));
+  const toggleDeploy = () => {
+    setDeploy(!deploy);
+  };
+  const add_monodroga = async (name, quantity) => {
+    try {
+      const response = await fetch("http://localhost:7000/monodroga", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, quantity }),
+      });
+      if (response.ok) {
+        alert("Monodroga Agregada");
+      } else {
+        alert("Error al agregar monodroga");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
-  const borrar_monodroga = async () => {
-    // Función asíncrona para eliminar una monodroga en la base de datos
 
-    fetch("http://localhost:7000/monodroga", {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id_delete }),
-    })
-      .then((response) => response.json())
-      .then((data) => alert("Monodroga Eliminada"))
-      .catch((error) => console.error("Error:", error));
+  const borrar_monodroga = async () => {
+    try {
+      const response = await fetch("http://localhost:7000/monodroga", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id_delete }),
+      });
+      if (response.ok) {
+        alert("Monodroga Eliminada");
+      } else {
+        alert("Error al eliminar monodroga");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const modificar_monodroga = async () => {
-    // Función asíncrona para eliminar una monodroga en la base de datos
-
-    fetch("http://localhost:7000/monodroga", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nuevo_valor, id }),
-    })
-      .then((response) => response.json())
-      .then((data) => alert("Monodroga Modificada"))
-      .catch((error) => console.error("Error:", error));
+    try {
+      const response = await fetch("http://localhost:7000/monodroga", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nuevo_valor, id }),
+      });
+      if (response.ok) {
+        alert("Monodroga Modificada");
+      } else {
+        alert("Error al modificar monodroga");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
     <div className="search-bar">
       <fieldset className="search-container">
         <h1 className="title">Search bar</h1>
+
         <div className="group relative flex items-center sm:block">
           <Search className="absolute left-3 top-2 text-xl text-gray-600 duration-200 group-hover:text-primary dark:text-gray-400" />
           <input
@@ -60,28 +79,21 @@ const Search_Bar = () => {
           />
         </div>
 
-        <div className="button">
+        {/* Integrando New_Item aquí */}
 
-          <input
-            type="text"
-            className="text-black"
-            value={name}
-            placeholder="Agregar monodroga"
-            onChange={(e) => {
-              Setname(e.target.value);
-            }}
-          />
-          <button className="button new-item-button" onClick={add_monodroga}>
+        <div className="button">
+          <button className="button new-item-button" onClick={toggleDeploy}>
             Agregar
           </button>
+
+          {deploy && <New_Item onSubmit={add_monodroga} />}
+
           <input
             type="number"
             className="text-black"
             value={id_delete}
             placeholder="Eliminar monodroga"
-            onChange={(e) => {
-              Setid_delete(e.target.value);
-            }}
+            onChange={(e) => setIdDelete(e.target.value)}
           />
           <button
             className="button delete-item-button"
@@ -90,17 +102,34 @@ const Search_Bar = () => {
             Eliminar
           </button>
 
-          <form id="registroFormUpdate_monodroga">
-            <label for="id">Código de la Monodroga:</label>
-            <input type="number" className="text-black" value={id} placeholder="Ingrese el id" onChange={(e) => { Setid(e.target.value) }} required />
-            <br></br>
-            <label for="nuevo_valor">Nombre nuevo:</label>
-            <input type="text" className="text-black" value={nuevo_valor} placeholder="Ingrese el nuevo valor" onChange={(e) => { Setnuevo_valor(e.target.value) }} required />
-            <br></br>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              modificar_monodroga();
+            }}
+          >
+            <label htmlFor="id">ID Monodroga:</label>
+            <input
+              type="number"
+              className="text-black"
+              value={id}
+              placeholder="Ingrese el id"
+              onChange={(e) => setId(e.target.value)}
+              required
+            />
+            <br />
+            <label htmlFor="nuevo_valor">Nombre nuevo:</label>
+            <input
+              type="text"
+              className="text-black"
+              value={nuevo_valor}
+              placeholder="Ingrese el nuevo valor"
+              onChange={(e) => setNuevoValor(e.target.value)}
+              required
+            />
+            <br />
             <button type="submit">Actualizar</button>
           </form>
-
-          <button className="button modify-item-button" onClick={modificar_monodroga}>Modificar</button>
         </div>
       </fieldset>
     </div>

@@ -4,6 +4,8 @@ import { ChevronDown } from "lucide-react";
 import Darkmode from "./Darkmode";
 import { Link } from "react-router";
 
+import './shadow.css';
+
 const MenuLinks = [
   {
     id: 1,
@@ -42,15 +44,17 @@ const DropdownLinks = [
 
 const Navbar = () => {
   return (
-    <div className="container flex items-center justify-between">
+    <div className="NavBar container flex items-center justify-between">
       {/*Logo and links */}
 
-      <div className="relative z-40 bg-white duration-200 dark:bg-gray-900 dark:text-white">
+      <div className="relative z-40 bg-white duration-200 text-blue-900 dark:bg-gray-900 dark:text-white font-semibold">
         <div className="py-4">
+        
           <div className="flex items-center gap-4">
+          <img src='/public/logo-farmanada.png' className="w-10 mr-4"/>
             <Link
               to="/"
-              className="tracking-wides text-2xl font-semibold uppercase text-primary sm:text-3xl"
+              className="tracking-wides text-2xl  uppercase  "
             >
               Farma-nada
             </Link>
