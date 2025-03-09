@@ -23,7 +23,7 @@
   margin-left: 20px;
   padding: 16px;
   background: rgb(228, 231, 233);
-  width: 400px;
+  width: 380px;
   border-radius: 50px;
 }
 
@@ -130,6 +130,7 @@
   transition: ease-in-out;
   transition-duration: 0.3s;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .submit-button:hover {

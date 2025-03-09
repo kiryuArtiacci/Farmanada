@@ -10,8 +10,6 @@ import "../components/CRUDS/Leer.jsx";
 const Drugs = () => {
   const [data, Setdata] = useState(null);
   const Drogas = [data];
-  const [nuevo_valor, setNuevoValor] = useState("");
-  const [id, setId] = useState("");
   const [deployAdd, setDeployAdd] = useState(false);
   const [deployDel, setDeployDel] = useState(false);
   const [deployMod, setDeployMod] = useState(false);
@@ -63,7 +61,7 @@ const Drugs = () => {
     }
   };
 
-  const modificar_monodroga = async () => {
+  const modificar_monodroga = async (nuevo_valor, id) => {
     try {
       const response = await fetch("http://localhost:7000/monodroga", {
         method: "PUT",
@@ -146,34 +144,13 @@ const Drugs = () => {
           </button>
           {deployDel && <Delete_drug onSubmit={borrar_monodroga} />}
 
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              modificar_monodroga();
-            }}
+          <button
+            className="button modify-item-button"
+            onClick={toggleDeployMod}
           >
-            <label htmlFor="id">ID Monodroga:</label>
-            <input
-              type="number"
-              className="text-black"
-              value={id}
-              placeholder="Ingrese el id"
-              onChange={(e) => setId(e.target.value)}
-              required
-            />
-            <br />
-            <label htmlFor="nuevo_valor">Nombre nuevo:</label>
-            <input
-              type="text"
-              className="text-black"
-              value={nuevo_valor}
-              placeholder="Ingrese el nuevo valor"
-              onChange={(e) => setNuevoValor(e.target.value)}
-              required
-            />
-            <br />
-            <button type="submit">Actualizar</button>
-          </form>
+            Modify
+          </button>
+          {deployMod && <Modify_drug onSubmit={modificar_monodroga} />}
         </div>
       </Search_Bar>
     </div>
@@ -243,6 +220,45 @@ const Delete_drug = ({ onSubmit }) => {
           required
           value={id_delete}
           onChange={(elem) => setIdDelete(elem.target.value)}
+        />
+        <input type="submit" value="Aceptar" className="submit-button" />
+      </form>
+    </div>
+  );
+};
+
+const Modify_drug = ({ onSubmit }) => {
+  const [nuevo_valor, setNuevoValor] = useState("");
+  const [id, setId] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(nuevo_valor, id);
+    setNuevoValor("");
+    setId("");
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit} className="add-item-container">
+        <div className="add-title-container">
+          <h2 className="add-title">Modify</h2>
+        </div>
+        <input
+          type="text"
+          className="mb-4 text-black"
+          value={id}
+          placeholder="Ingrese el id"
+          onChange={(e) => setId(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          className="text-black"
+          value={nuevo_valor}
+          placeholder="Ingrese el nuevo valor"
+          onChange={(e) => setNuevoValor(e.target.value)}
+          required
         />
         <input type="submit" value="Aceptar" className="submit-button" />
       </form>
