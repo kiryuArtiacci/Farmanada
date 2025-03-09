@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Search } from "lucide-react"; // Import Search icon if you want to add a search bar within EmpleadoManager later
-
+import "../";
 const EmpleadoManager = () => {
   // Estados para el manejo de empleados
   const [empleados, setEmpleados] = useState([]);
