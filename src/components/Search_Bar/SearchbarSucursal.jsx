@@ -117,13 +117,14 @@ const SucursalManager = () => {
         <div className="mb-4">
           {" "}
           {/* Add margin bottom for spacing */}
-          <h3>Agregar Sucursal</h3>
+          <h3 className="title">Agregar Sucursal</h3>
           <input
             type="text"
             placeholder="Nombre"
             value={name}
             onChange={(e) => handleInputChange(e, setName)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -131,6 +132,7 @@ const SucursalManager = () => {
             value={direccion}
             onChange={(e) => handleInputChange(e, setDireccion)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -138,6 +140,7 @@ const SucursalManager = () => {
             value={tlf}
             onChange={(e) => handleInputChange(e, setTlf)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="email"
@@ -145,8 +148,9 @@ const SucursalManager = () => {
             value={email}
             onChange={(e) => handleInputChange(e, setEmail)}
             className="input-field" // Apply input field style
+            required
           />
-          <button onClick={addSucursal} className="button ml-12">
+          <button onClick={addSucursal} className="button ml-12 bg-black p-4">
             Agregar Sucursal
           </button>{" "}
           {/* Apply button style */}
@@ -154,13 +158,14 @@ const SucursalManager = () => {
         <div className="mb-4">
           {" "}
           {/* Add margin bottom for spacing */}
-          <h3>Modificar Sucursal</h3>
+          <h3 className="title">Modificar Sucursal</h3>
           <input
             type="text"
             placeholder="ID de Sucursal a modificar"
             value={id_modificar}
             onChange={(e) => handleInputChange(e, setIdModificar)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -168,6 +173,7 @@ const SucursalManager = () => {
             value={propiedad}
             onChange={(e) => handleInputChange(e, setPropiedad)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -175,6 +181,7 @@ const SucursalManager = () => {
             value={nuevo_valor}
             onChange={(e) => handleInputChange(e, setNuevoValor)}
             className="input-field" // Apply input field style
+            required
           />
           <button onClick={modificarSucursal} className="button ml-12">
             Modificar Sucursal
@@ -184,13 +191,14 @@ const SucursalManager = () => {
         <div className="mb-4">
           {" "}
           {/* Add margin bottom for spacing */}
-          <h3>Borrar Sucursal</h3>
+          <h3 className="title">Borrar Sucursal</h3>
           <input
             type="text"
             placeholder="ID de Sucursal a borrar"
             value={id_delete}
             onChange={(e) => handleInputChange(e, setIdDelete)}
             className="input-field" // Apply input field style
+            required
           />
           <button onClick={borrarSucursal} className="button ml-12">
             Borrar Sucursal
@@ -198,7 +206,7 @@ const SucursalManager = () => {
           {/* Apply button style */}
         </div>
         <div>
-          <h3>Listar Sucursales (Opcional - para pruebas)</h3>
+          <h3 className="title">Listar Sucursales</h3>
           <button onClick={getSucursales} className="button ml-12">
             Cargar Sucursales
           </button>{" "}

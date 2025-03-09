@@ -146,6 +146,7 @@ const EmpleadoManager = () => {
             value={cedula_empleado}
             onChange={(e) => handleInputChange(e, setCedulaEmpleado)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -153,6 +154,7 @@ const EmpleadoManager = () => {
             value={name_empleado}
             onChange={(e) => handleInputChange(e, setNameEmpleado)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -160,6 +162,7 @@ const EmpleadoManager = () => {
             value={apellido_empleado}
             onChange={(e) => handleInputChange(e, setApellidoEmpleado)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -167,6 +170,7 @@ const EmpleadoManager = () => {
             value={tlf_empleado}
             onChange={(e) => handleInputChange(e, setTlfEmpleado)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="email"
@@ -174,6 +178,7 @@ const EmpleadoManager = () => {
             value={email_empleado}
             onChange={(e) => handleInputChange(e, setEmailEmpleado)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -181,6 +186,7 @@ const EmpleadoManager = () => {
             value={direccion_empleado}
             onChange={(e) => handleInputChange(e, setDireccionEmpleado)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="date"
@@ -188,6 +194,7 @@ const EmpleadoManager = () => {
             value={fecha_ingreso_empleado}
             onChange={(e) => handleInputChange(e, setFechaIngresoEmpleado)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -195,8 +202,9 @@ const EmpleadoManager = () => {
             value={img_empleado}
             onChange={(e) => handleInputChange(e, setImgEmpleado)}
             className="input-field" // Apply input field style
+            required
           />
-          <button onClick={addEmpleado} className="button">
+          <button onClick={addEmpleado} className="button ml-12">
             Agregar Empleado
           </button>{" "}
           {/* Apply button style */}
@@ -211,6 +219,7 @@ const EmpleadoManager = () => {
             value={cedula_empleado_modificar}
             onChange={(e) => handleInputChange(e, setCedulaEmpleadoModificar)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -218,6 +227,7 @@ const EmpleadoManager = () => {
             value={propiedad_empleado}
             onChange={(e) => handleInputChange(e, setPropiedadEmpleado)}
             className="input-field" // Apply input field style
+            required
           />
           <input
             type="text"
@@ -225,8 +235,9 @@ const EmpleadoManager = () => {
             value={empleado_nuevo_valor}
             onChange={(e) => handleInputChange(e, setEmpleadoNuevoValor)}
             className="input-field" // Apply input field style
+            required
           />
-          <button onClick={modificarEmpleado} className="button">
+          <button onClick={modificarEmpleado} className="button ml-12">
             Modificar Empleado
           </button>{" "}
           {/* Apply button style */}
@@ -241,15 +252,16 @@ const EmpleadoManager = () => {
             value={delete_cedula_empleado}
             onChange={(e) => handleInputChange(e, setDeleteCedulaEmpleado)}
             className="input-field" // Apply input field style
+            required
           />
-          <button onClick={borrarEmpleado} className="button">
+          <button onClick={borrarEmpleado} className="button ml-12">
             Borrar Empleado
           </button>{" "}
           {/* Apply button style */}
         </div>
         <div>
           <h3>Listar Empleados (Opcional - para pruebas)</h3>
-          <button onClick={getEmpleados} className="button">
+          <button onClick={getEmpleados} className="button ml-12">
             Cargar Empleados
           </button>{" "}
           {/* Apply button style */}
