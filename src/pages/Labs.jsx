@@ -3,30 +3,30 @@ import { useEffect, useState } from "react";
 import List from "../components/List/List";
 import "../styles/admin.css";
 import List_item from "../components/List/List_item";
-import Search_Bar from "../components/Search_Bar/Search_Bar";
 import Sidebar from "../components/sidebar/Sidebar";
+import LaboratorioManager from "../components/Search_Bar/LaboratorioManager";
 
 //------------COMPONENTE PRINCIPAL LABS------------
-/** 
-* .----------------------------------------------------------------------------------------. 
-* | ____ ___ __ __ ____ ___ _ _ _____ _ _ _____ _____ | 
-* | / ___/ _ \| \/ | _\/_\| \ | | ____| \ | |_ _| ____| | 
-* || | | | | | |\/| | |_) | | | | \| | _| | \| | | | | _| | 
-* || |__| |_| | | | | __/| |_| | |\ | |___| |\ | | | | |___ | 
-* | \____\___/|_|__|_|_|_ _\___/|_|_\_|_____|_|_\_| |_|_|_____| _ ____ | 
-* || _\| _ \|_ _| \ | |/ ___|_ _| _\/\ | | | | /\ | __ ) | 
-* || |_) | |_) || || \| | | | || |_) / _ \ | | | | / _ \ | _\ | 
-* || __/| _ < | || |\ | |___ | || __/ ___ \| |___ | |___ / ___ \| |_) || 
-* ||_| |_| \_\___|_| \_|\____|___|_| /_/ \_\_____| |_____/_/ \_\____/ | 
-* '----------------------------------------------------------------------------------' 
-*/
+/**
+ * .----------------------------------------------------------------------------------------.
+ * | ____ ___ __ __ ____ ___ _ _ _____ _ _ _____ _____ |
+ * | / ___/ _ \| \/ | _\/_\| \ | | ____| \ | |_ _| ____| |
+ * || | | | | | |\/| | |_) | | | | \| | _| | \| | | | | _| |
+ * || |__| |_| | | | | __/| |_| | |\ | |___| |\ | | | | |___ |
+ * | \____\___/|_|__|_|_|_ _\___/|_|_\_|_____|_|_\_| |_|_|_____| _ ____ |
+ * || _\| _ \|_ _| \ | |/ ___|_ _| _\/\ | | | | /\ | __ ) |
+ * || |_) | |_) || || \| | | | || |_) / _ \ | | | | / _ \ | _\ |
+ * || __/| _ < | || |\ | |___ | || __/ ___ \| |___ | |___ / ___ \| |_) ||
+ * ||_| |_| \_\___|_| \_|\____|___|_| /_/ \_\_____| |_____/_/ \_\____/ |
+ * '----------------------------------------------------------------------------------'
+ */
 
 const Labs = () => {
-const [data, Setdata] = useState(null);
+  const [data, Setdata] = useState(null);
 
-const [deployMod, setDeployMod] = useState(false);
+  const [deployMod, setDeployMod] = useState(false);
 
-//****---useEffect CARGAR DATOS--****
+  //****---useEffect CARGAR DATOS--****
   useEffect(() => {
     async function cargarMonodrogas() {
       try {
@@ -52,35 +52,32 @@ const [deployMod, setDeployMod] = useState(false);
     //parent
     <div className="admin-page-container">
       <Sidebar />
-              {data && ( // RENDERIZADO DE LA DATA
-                  <List className="list-container">
-                    <h1 className="title">LABS: </h1>
-                    {Array.isArray(data) &&
-                      data.map(
-                        (
-                          item, //Verificamos si data es un array, y si lo es, lo mapeamos.
-                        ) => (
-                          <div>
-          
-                            <List_item
-                              key={item.id}
-                              item_id={item.id} //Agregamos una key unica, al item. y la mostramos
-                              item_name={item.nombre} //Usamos item.nombre, ya que data es un array de objetos.
-                              img_src="/public/pill-icon.svg"
-                              price="200$"
-                              stock="100U"
-                              description="Lorem ipsum"
-                              DeleteOnClick={toggleDeployMod}
-                              ChangeOnClick={toggleDeployMod}
-                            />
-                            
-                          </div>
-                          
-                        ),
-                      )}
-                  </List>
-                )}
-      <Search_Bar className="search-bar" />
+      {data && ( // RENDERIZADO DE LA DATA
+        <List className="list-container">
+          <h1 className="title">LABS: </h1>
+          {Array.isArray(data) &&
+            data.map(
+              (
+                item, //Verificamos si data es un array, y si lo es, lo mapeamos.
+              ) => (
+                <div>
+                  <List_item
+                    key={item.id}
+                    item_id={item.id} //Agregamos una key unica, al item. y la mostramos
+                    item_name={item.nombre} //Usamos item.nombre, ya que data es un array de objetos.
+                    img_src="/public/pill-icon.svg"
+                    price="200$"
+                    stock="100U"
+                    description="Lorem ipsum"
+                    DeleteOnClick={toggleDeployMod}
+                    ChangeOnClick={toggleDeployMod}
+                  />
+                </div>
+              ),
+            )}
+        </List>
+      )}
+      <LaboratorioManager className="search-bar" />
     </div>
   );
 };
