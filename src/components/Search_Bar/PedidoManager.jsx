@@ -206,7 +206,7 @@ const PedidoManager = () => {
             onChange={(e) => handleInputChange(e, setFormaPagoPedido)}
             className="input-field"
           />
-          <button onClick={addPedido} className="button">
+          <button onClick={addPedido} className="button ml-12">
             Agregar Pedido
           </button>
         </div>
@@ -234,7 +234,7 @@ const PedidoManager = () => {
             onChange={(e) => handleInputChange(e, setNuevoValorPedido)}
             className="input-field"
           />
-          <button onClick={modificarPedido} className="button">
+          <button onClick={modificarPedido} className="button ml-12">
             Modificar Pedido
           </button>
         </div>
@@ -248,14 +248,14 @@ const PedidoManager = () => {
             onChange={(e) => handleInputChange(e, setIdDeletePedido)}
             className="input-field"
           />
-          <button onClick={borrarPedido} className="button">
+          <button onClick={borrarPedido} className="button ml-12">
             Borrar Pedido
           </button>
         </div>
 
         <div>
           <h3>Listar Pedidos (Opcional - para pruebas)</h3>
-          <button onClick={getPedidos} className="button">
+          <button onClick={getPedidos} className="button ml-12">
             Cargar Pedidos
           </button>
           {pedidos.length > 0 && (

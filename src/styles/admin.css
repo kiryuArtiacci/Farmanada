@@ -1,7 +1,7 @@
 .admin-page-container {
   display: flex;
   height: 100%;
-  margin-top: 1%
+  margin-top: 1%;
 }
 
 .list-container {
@@ -24,7 +24,7 @@
   margin-left: 10px;
   padding: 16px;
   background: rgb(228, 231, 233);
-  width: 20%;
+  width: 40%;
   border-radius: 50px;
   margin-top: 16px;
 }
@@ -167,4 +167,10 @@
   margin-left: 50px;
   font-size: 19px;
   padding-right: 5px;
+}
+
+.sub-title {
+  font: 15px;
+  font-weight: bold;
+  color: rgb(5, 5, 5);
 }

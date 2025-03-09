@@ -7,8 +7,6 @@ import Search_Bar from "../components/Search_Bar/Search_Bar";
 import Sidebar from "../components/sidebar/Sidebar";
 import "../components/CRUDS/Leer.jsx";
 
-
-
 //---COMPONENTE SECUNDARIO AGREGAR_SUCURSALES---
 const New_sucursal = ({ onSubmit }) => {
   // Renamed component
@@ -128,14 +126,21 @@ const Modify_sucursal = ({ onSubmit }) => {
           onChange={(e) => setId(e.target.value)}
           required
         />
-        <input
-          type="text"
+        <select
           className="form-item mb-2 text-black" // Added form-item class for styling
           value={propiedad}
           placeholder="Propiedad a modificar (nombre, direccion...)" // Updated placeholder
           onChange={(e) => setPropiedad(e.target.value)}
           required
-        />
+        >
+          <option value="" disabled>
+            Propiedad a modificar
+          </option>
+          <option value="nombre">Nombre</option>
+          <option value="direccion">Dirección</option>
+          <option value="telefono">Teléfono</option>
+          <option value="email">Email</option>
+        </select>
         <input
           type="text"
           className="form-item text-black" // Added form-item class for styling
@@ -151,23 +156,23 @@ const Modify_sucursal = ({ onSubmit }) => {
 };
 
 //------------COMPONENTE PRINCIPAL SUCURSALES------------
-/** 
-* .--------------------------------------------------------------. 
-* | ____ ___ __ __ ____ ___ _ _ _____ _ _ _____ _____ | 
-* | / ___/ _ \| \/ | _\/_\| \ | | ____| \ | |_ _| ____| | 
-* || | | | | | |\/| | |_) | | | | \| | _| | \| | | | | _| | 
-* || |__| |_| | | | | __/| |_| | |\ | |___| |\ | | | | |___ | 
-* | \____\___/|_|__|_|_|_ _\___/|_|_\_|_____|_|_\_| |_| |_____| | 
-* || _\| _ \|_ _| \ | |/ ___|_ _| _\/\ | | | 
-* || |_) | |_) || || \| | | | || |_) / _ \ | | | 
-* || __/| _ < | || |\ | |___ | || __/ ___ \| |___ | 
-* ||_|__ |_| \_\___|_|_\_|\____|___|_| /_/_ \_\_____|____ ____ | 
-* |/ ___|| | | |/ ___| | | | _\/ ___| /\ | | | ____/ ___| | 
-* |\___ \| | | | | | | | | |_) \___ \ / _ \ | | | _| \___ \ | 
-* | ___) | |_| | |___| |_| | _ < ___) / ___ \| |___| |___ ___) || 
-* ||____/ \___/ \____|\___/|_| \_\____/_/ \_\_____|_____|____/ | 
-* '--------------------------------------------------------------' 
-*/
+/**
+ * .--------------------------------------------------------------.
+ * | ____ ___ __ __ ____ ___ _ _ _____ _ _ _____ _____ |
+ * | / ___/ _ \| \/ | _\/_\| \ | | ____| \ | |_ _| ____| |
+ * || | | | | | |\/| | |_) | | | | \| | _| | \| | | | | _| |
+ * || |__| |_| | | | | __/| |_| | |\ | |___| |\ | | | | |___ |
+ * | \____\___/|_|__|_|_|_ _\___/|_|_\_|_____|_|_\_| |_| |_____| |
+ * || _\| _ \|_ _| \ | |/ ___|_ _| _\/\ | | |
+ * || |_) | |_) || || \| | | | || |_) / _ \ | | |
+ * || __/| _ < | || |\ | |___ | || __/ ___ \| |___ |
+ * ||_|__ |_| \_\___|_|_\_|\____|___|_| /_/_ \_\_____|____ ____ |
+ * |/ ___|| | | |/ ___| | | | _\/ ___| /\ | | | ____/ ___| |
+ * |\___ \| | | | | | | | | |_) \___ \ / _ \ | | | _| \___ \ |
+ * | ___) | |_| | |___| |_| | _ < ___) / ___ \| |___| |___ ___) ||
+ * ||____/ \___/ \____|\___/|_| \_\____/_/ \_\_____|_____|____/ |
+ * '--------------------------------------------------------------'
+ */
 
 const Sucursales = () => {
   const [data, Setdata] = useState(null);
@@ -243,7 +248,7 @@ const Sucursales = () => {
     }
   };
 
-//****---useEffect CARGAR DATOS--****
+  //****---useEffect CARGAR DATOS--****
   useEffect(() => {
     async function cargarSucursales() {
       // Updated function name to fetch sucursales
@@ -325,4 +330,4 @@ const Sucursales = () => {
   );
 };
 
-export default Sucursales; 
+export default Sucursales;

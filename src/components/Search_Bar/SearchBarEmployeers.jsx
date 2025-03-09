@@ -139,7 +139,7 @@ const EmpleadoManager = () => {
         <div className="mb-4">
           {" "}
           {/* Add margin bottom for spacing */}
-          <h3>Agregar Empleado</h3>
+          <h3 className="sub-title">Agregar Empleado</h3>
           <input
             type="text"
             placeholder="Cédula"
@@ -204,7 +204,7 @@ const EmpleadoManager = () => {
             className="input-field" // Apply input field style
             required
           />
-          <button onClick={addEmpleado} className="button ml-12">
+          <button onClick={addEmpleado} className="button button ml-16">
             Agregar Empleado
           </button>{" "}
           {/* Apply button style */}
@@ -237,7 +237,7 @@ const EmpleadoManager = () => {
             className="input-field" // Apply input field style
             required
           />
-          <button onClick={modificarEmpleado} className="button ml-12">
+          <button onClick={modificarEmpleado} className="button button ml-16">
             Modificar Empleado
           </button>{" "}
           {/* Apply button style */}
@@ -245,7 +245,7 @@ const EmpleadoManager = () => {
         <div className="mb-4">
           {" "}
           {/* Add margin bottom for spacing */}
-          <h3>Borrar Empleado</h3>
+          <h3 className="sub-title">Borrar Empleado</h3>
           <input
             type="text"
             placeholder="Cédula del empleado a borrar"
@@ -254,26 +254,10 @@ const EmpleadoManager = () => {
             className="input-field" // Apply input field style
             required
           />
-          <button onClick={borrarEmpleado} className="button ml-12">
+          <button onClick={borrarEmpleado} className="button ml-16">
             Borrar Empleado
           </button>{" "}
           {/* Apply button style */}
-        </div>
-        <div>
-          <h3>Listar Empleados (Opcional - para pruebas)</h3>
-          <button onClick={getEmpleados} className="button ml-12">
-            Cargar Empleados
-          </button>{" "}
-          {/* Apply button style */}
-          {empleados.length > 0 && (
-            <ul>
-              {empleados.map((empleado) => (
-                <li key={empleado.id}>
-                  {empleado.nombre} {empleado.apellido} - ID: {empleado.id}
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
       </fieldset>
       <style jsx>{`

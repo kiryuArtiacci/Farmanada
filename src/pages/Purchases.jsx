@@ -71,7 +71,7 @@ const Purchases = () => {
                   key={item.id}
                   item_id={item.id} // Muestra el ID del pedido
                   item_name={`${item.nombre_empleado} ${item.apellido_empleado}`} // Muestra nombre y apellido del empleado
-                  img_src="/public/order-icon.svg" // Updated icon - you might need to add this to your public folder
+                  img_src={item.img} // Updated icon - you might need to add this to your public folder
                   price={item.sucursal} // Muestra el nombre de la sucursal
                   stock={item.fecha} // Muestra la fecha del pedido
                   description={item.forma_pago} // Muestra la forma de pago
