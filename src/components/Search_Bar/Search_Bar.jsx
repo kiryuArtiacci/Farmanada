@@ -65,6 +65,7 @@ const Search_Bar = () => {
     }
   };
 
+/*const Search_Bar = ({ children }) => {
   return (
     <div className="search-bar">
       <fieldset className="search-container">
@@ -78,62 +79,10 @@ const Search_Bar = () => {
             className="w-[300px] rounded-full border border-gray-500 py-2 pl-10 pr-3 transition-all duration-300 focus:outline-none dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:group-hover:bg-gray-800"
           />
         </div>
-
-        {/* Integrando New_Item aquí */}
-
-        <div className="button">
-          <button className="button new-item-button" onClick={toggleDeploy}>
-            Agregar
-          </button>
-
-          {deploy && <New_Item onSubmit={add_monodroga} />}
-
-          <input
-            type="number"
-            className="text-black"
-            value={id_delete}
-            placeholder="Eliminar monodroga"
-            onChange={(e) => setIdDelete(e.target.value)}
-          />
-          <button
-            className="button delete-item-button"
-            onClick={borrar_monodroga}
-          >
-            Eliminar
-          </button>
-
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              modificar_monodroga();
-            }}
-          >
-            <label htmlFor="id">ID Monodroga:</label>
-            <input
-              type="number"
-              className="text-black"
-              value={id}
-              placeholder="Ingrese el id"
-              onChange={(e) => setId(e.target.value)}
-              required
-            />
-            <br />
-            <label htmlFor="nuevo_valor">Nombre nuevo:</label>
-            <input
-              type="text"
-              className="text-black"
-              value={nuevo_valor}
-              placeholder="Ingrese el nuevo valor"
-              onChange={(e) => setNuevoValor(e.target.value)}
-              required
-            />
-            <br />
-            <button type="submit">Actualizar</button>
-          </form>
-        </div>
+        {children}
       </fieldset>
     </div>
-  );
+  );*/
 };
 
 export default Search_Bar;

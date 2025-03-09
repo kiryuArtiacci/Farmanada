@@ -23,7 +23,7 @@
   margin-left: 20px;
   padding: 16px;
   background: rgb(228, 231, 233);
-  width: 400px;
+  width: 380px;
   border-radius: 50px;
 }
 
@@ -98,6 +98,7 @@
   flex-direction: column;
   transition: ease-in-out;
   transition-duration: 0.5s;
+  margin-left: 20px;
 }
 
 .form-item {
@@ -118,6 +119,7 @@
   font-size: 20px;
   font-weight: bold;
   color: white;
+  padding: 10px 10px 10px 10px;
 }
 
 .submit-button {
@@ -127,6 +129,8 @@
   padding: 10px 10px 10px 10px;
   transition: ease-in-out;
   transition-duration: 0.3s;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .submit-button:hover {
@@ -135,8 +139,29 @@
   cursor: pointer;
 }
 
-.img{
-  width:100px;
+.img {
+  width: 100px;
   height: 100px;
   background-color: red;
+}
+
+.descriptions {
+  display: flex;
+  align-items: center; /* Alinea verticalmente */
+  gap: 10px; /* Espaciado entre los elementos */
+  background: rgb(255, 255, 255);
+  justify-content: center;
+  padding: 10px;
+  border-radius: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  width: 650px;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+  margin-left: 12px;
+}
+
+.description-item {
+  margin-left: 50px;
+  font-size: 19px;
+  padding-right: 5px;
 }

@@ -1,9 +1,7 @@
-
 import { EllipsisVertical } from "lucide-react";
 
-
-
 const List_item = ({
+  item_id,
   item_name,
   img_src,
   description,
@@ -14,6 +12,7 @@ const List_item = ({
     <span className="container-a">
       <img src={img_src} alt={item_name} className="item-icon" />
 
+      <h2 className="item-name">{item_id}</h2>
       <h2 className="item-name">{item_name}</h2>
       <p className="item-description">{description}</p>
       <h3 className="item-stock">{stock}</h3>
@@ -24,9 +23,4 @@ const List_item = ({
   );
 };
 
-
-
-
-export default List_item ;
-
-
+export default List_item;
