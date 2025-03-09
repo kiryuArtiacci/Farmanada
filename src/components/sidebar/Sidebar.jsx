@@ -13,7 +13,7 @@ export default function Sidebar() {
     <>
       {/* Contenedor del Sidebar ocupando toda la altura de la pantalla */}
       <aside className="h-screen">
-        <nav className="flex h-full flex-col border-r-8 bg-blue-300 shadow-sm">
+        <nav className="flex h-full flex-col border-r-8 bg-gradient-to-r from-blue-200 to-cyan-200 shadow-sm">
           {/* Sección superior con el botón para expandir/colapsar el sidebar */}
           <div className="flex items-center justify-between p-4 pb-2">
             <button

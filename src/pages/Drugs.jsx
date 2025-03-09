@@ -7,157 +7,6 @@ import { useEffect, useState } from "react";
 import "../components/CRUDS/Leer.jsx";
 // import "../components/List/List.css";
 
-const Drugs = () => {
-  const [data, Setdata] = useState(null);
-  const Drogas = [data];
-  const [deployAdd, setDeployAdd] = useState(false);
-  const [deployDel, setDeployDel] = useState(false);
-  const [deployMod, setDeployMod] = useState(false);
-
-  const toggleDeployAdd = () => {
-    // Esta funcion es la que hace el menu desplegable Agregar
-    setDeployAdd(!deployAdd);
-  };
-  const toggleDeployDel = () => {
-    // Esta funcion es la que hace el menu desplegable Eliminar
-    setDeployDel(!deployDel);
-  };
-  const toggleDeployMod = () => {
-    // Esta funcion es la que hace el menu desplegable Modificar
-    setDeployMod(!deployMod);
-  };
-
-  const add_monodroga = async (name, quantity) => {
-    try {
-      const response = await fetch("http://localhost:7000/monodroga", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, quantity }),
-      });
-      if (response.ok) {
-        alert("Monodroga Agregada");
-      } else {
-        alert("Error al agregar monodroga");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  const borrar_monodroga = async (id_delete) => {
-    try {
-      const response = await fetch("http://localhost:7000/monodroga", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id_delete }),
-      });
-      if (response.ok) {
-        alert(`Monodroga Eliminada ${id_delete}`);
-      } else {
-        alert("Error al eliminar monodroga");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  const modificar_monodroga = async (nuevo_valor, id) => {
-    try {
-      const response = await fetch("http://localhost:7000/monodroga", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nuevo_valor, id }),
-      });
-      if (response.ok) {
-        alert("Monodroga Modificada");
-      } else {
-        alert("Error al modificar monodroga");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  useEffect(() => {
-    async function cargarMonodrogas() {
-      try {
-        const response = await fetch("http://localhost:7000/monodroga");
-        if (!response.ok)
-          throw new Error("Error en la solicitud: " + response.statusText);
-
-        const dataRecibida = await response.json();
-        console.log("Datos recibidos:", dataRecibida);
-        Setdata(dataRecibida);
-      } catch (error) {
-        console.error("Error al cargar los Empleados:", error);
-      }
-    }
-    cargarMonodrogas();
-  }, []);
-
-  return (
-    //parent
-    <div className="admin-page-container">
-      <Sidebar />
-      {data && ( // Verificamos si data tiene un valor
-        <List className="list-container">
-          <h1 className="title">Drugs: </h1>
-          <div className="descriptions">
-            <h2 className="description-item">ID</h2>
-            <h2 className="description-item">Name</h2>
-            <h2 className="description-item">Description</h2>
-            <h2 className="description-item">Stock</h2>
-            <h2 className="description-item">Price</h2>
-          </div>
-          {Array.isArray(data) &&
-            data.map(
-              (
-                item, //Verificamos si data es un array, y si lo es, lo mapeamos.
-              ) => (
-                <List_item
-                  key={item.id}
-                  item_id={item.id} //Agregamos una key unica, al item. y la mostramos
-                  item_name={item.nombre} //Usamos item.nombre, ya que data es un array de objetos.
-                  img_src="/public/pill-icon.svg"
-                  price="200$"
-                  stock="100U"
-                  description="Lorem ipsum"
-                />
-              ),
-            )}
-        </List>
-      )}
-
-      <Search_Bar>
-        <div className="button">
-          <button className="button new-item-button" onClick={toggleDeployAdd}>
-            Agregar
-          </button>
-
-          {deployAdd && <New_drug onSubmit={add_monodroga} />}
-
-          <button
-            className="button delete-item-button"
-            onClick={toggleDeployDel}
-          >
-            Eliminar
-          </button>
-          {deployDel && <Delete_drug onSubmit={borrar_monodroga} />}
-
-          <button
-            className="button modify-item-button"
-            onClick={toggleDeployMod}
-          >
-            Modify
-          </button>
-          {deployMod && <Modify_drug onSubmit={modificar_monodroga} />}
-        </div>
-      </Search_Bar>
-    </div>
-  );
-};
-
-export default Drugs;
 
 const New_drug = ({ onSubmit }) => {
   const [name, setName] = useState("");
@@ -265,3 +114,180 @@ const Modify_drug = ({ onSubmit }) => {
     </div>
   );
 };
+
+//------------COMPONENTE PRINCIPAL DROGASS------------
+/** 
+* .---------------------------------------------------------------------. 
+* | ____ ___ __ __ ____ ___ _ _ _____ _ _ _____ _____ | 
+* | / ___/ _ \| \/ | _\/_\| \ | | ____| \ | |_ _| ____|| 
+* || | | | | | |\/| | |_) | | | | \| | _| | \| | | | | _| | 
+* || |__| |_| | | | | __/| |_| | |\ | |___| |\ | | | | |___ | 
+* | \____\___/|_|__|_|_|_ _\___/|_|_\_|_____|_|_\_| |_| |_____|| 
+* || _\| _ \|_ _| \ | |/ ___|_ _| _\/\ | | | 
+* || |_) | |_) || || \| | | | || |_) / _ \ | | | 
+* || __/| _ < | || |\ | |___ | || __/ ___ \| |___ | 
+* ||_|__ |_|_\_\___|_| \_|\____|___|_|_/_/ \_\_____| | 
+* || _\| _ \ / _ \ / ___| /\/___| | 
+* || | | | |_) | | | | | _ / _ \ \___ \ | 
+* || |_| | _ <| |_| | |_| |/ ___ \ ___) | | 
+* ||____/|_| \_\\___/ \____/_/ \_\____/ | 
+* '-----------------------------------------------------------------------' 
+*/
+const Drugs = () => {
+  const [data, Setdata] = useState(null);
+  const [deployAdd, setDeployAdd] = useState(false);
+  const [deployDel, setDeployDel] = useState(false);
+  const [deployMod, setDeployMod] = useState(false);
+
+  const toggleDeployAdd = () => {
+    // Esta funcion es la que hace el menu desplegable Agregar
+    setDeployAdd(!deployAdd);
+  };
+  const toggleDeployDel = () => {
+    // Esta funcion es la que hace el menu desplegable Eliminar
+    setDeployDel(!deployDel);
+  };
+  const toggleDeployMod = () => {
+    // Esta funcion es la que hace el menu desplegable Modificar
+    setDeployMod(!deployMod);
+  };
+
+  const add_monodroga = async (name, quantity) => {
+    try {
+      const response = await fetch("http://localhost:7000/monodroga", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, quantity }),
+      });
+      if (response.ok) {
+        alert("Monodroga Agregada");
+      } else {
+        alert("Error al agregar monodroga");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+
+  };
+
+  const borrar = (id)=>{
+     Setnum(id);
+  }
+
+  const borrar_monodroga = async (id_delete) => {
+    try {
+      const response = await fetch("http://localhost:7000/monodroga", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id_delete }),
+      });
+      if (response.ok) {
+        alert(`Monodroga Eliminada ${id_delete}`);
+      } else {
+        alert("Error al eliminar monodroga");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const modificar_monodroga = async (nuevo_valor, id) => {
+    try {
+      const response = await fetch("http://localhost:7000/monodroga", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nuevo_valor, id }),
+      });
+      if (response.ok) {
+        alert("Monodroga Modificada");
+      } else {
+        alert("Error al modificar monodroga");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+//****---useEffect CARGAR DATOS--****
+  useEffect(() => {
+    async function cargarMonodrogas() {
+      try {
+        const response = await fetch("http://localhost:7000/monodroga");
+        if (!response.ok)
+          throw new Error("Error en la solicitud: " + response.statusText);
+
+        const dataRecibida = await response.json();
+        console.log("Datos recibidos:", dataRecibida);
+        Setdata(dataRecibida);
+      } catch (error) {
+        console.error("Error al cargar los Empleados:", error);
+      }
+    }
+    cargarMonodrogas();
+  }, []);
+
+  return (
+    //parent
+    <div className="admin-page-container">
+      <Sidebar />
+      {data && ( // RENDERIZADO DE LA DATA
+        <List className="list-container">
+          <h1 className="title">Drugs: </h1>
+          {Array.isArray(data) &&
+            data.map(
+              (
+                item, //Verificamos si data es un array, y si lo es, lo mapeamos.
+              ) => (
+                <div>
+
+                  <List_item
+                    key={item.id}
+                    item_id={item.id} //Agregamos una key unica, al item. y la mostramos
+                    item_name={item.nombre} //Usamos item.nombre, ya que data es un array de objetos.
+                    img_src="/public/pill-icon.svg"
+                    price="200$"
+                    stock="100U"
+                    description="Lorem ipsum"
+                    DeleteOnClick={toggleDeployMod}
+                    ChangeOnClick={toggleDeployMod}
+                  />
+                  
+                </div>
+                
+              ),
+            )}
+        </List>
+      )}
+
+      <Search_Bar>
+        <div className="button">
+          <button className="button new-item-button" onClick={toggleDeployAdd}>
+            Agregar
+          </button>
+
+          {deployAdd && <New_drug onSubmit={add_monodroga} />}
+
+          <button
+            className="button delete-item-button"
+            onClick={toggleDeployDel}
+          >
+            Eliminar
+          </button>
+          {deployDel && <Delete_drug onSubmit={borrar_monodroga} />}
+
+          <button
+            className="button modify-item-button"
+            onClick={toggleDeployMod}
+          >
+            Modify
+          </button>
+          {deployMod && <Modify_drug onSubmit={modificar_monodroga} />}
+        </div>
+      </Search_Bar>
+    </div>
+  );
+};
+
+export default Drugs;
+
+

@@ -1,6 +1,7 @@
 .admin-page-container {
   display: flex;
   height: 100%;
+  margin-top: 1%
 }
 
 .list-container {
@@ -20,10 +21,10 @@
   align-items: center;
   justify-content: right;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 10px;
   padding: 16px;
   background: rgb(228, 231, 233);
-  width: 380px;
+  width: 20%;
   border-radius: 50px;
   margin-top: 16px;
 }

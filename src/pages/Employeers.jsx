@@ -6,9 +6,29 @@ import List_User from "../components/List/List_User";
 import Sidebar from "../components/sidebar/Sidebar";
 import SearchBarEmployeer from "../components/Search_Bar/SearchBarEmployeers";
 
+
+//------------COMPONENTE PRINCIPAL EMPLEADOS------------
+/** 
+* .---------------------------------------------------------------------. 
+* | ____ ___ __ __ ____ ___ _ _ _____ _ _ _____ _____ | 
+* | / ___/ _ \| \/ | _\/_\| \ | | ____| \ | |_ _| ____|| 
+* || | | | | | |\/| | |_) | | | | \| | _| | \| | | | | _| | 
+* || |__| |_| | | | | __/| |_| | |\ | |___| |\ | | | | |___ | 
+* | \____\___/|_|__|_|_|_ _\___/|_|_\_|_____|_|_\_| |_| |_____|| 
+* || _\| _ \|_ _| \ | |/ ___|_ _| _\/\ | | | 
+* || |_) | |_) || || \| | | | || |_) / _ \ | | | 
+* || __/| _ < | || |\ | |___ | || __/ ___ \| |___ | 
+* ||_|___|_| \_\___|_| \_|\____|___|_|_/_/ __\_\_____| ____ | 
+* || ____| \/ | _\| | | ____| /\ | _ \ / _ \/ ___| | 
+* || _| | |\/| | |_) | | | _| / _ \ | | | | | | \___ \ | 
+* || |___| | | | __/| |___| |___ / ___ \| |_| | |_| |___) | | 
+* ||_____|_| |_|_| |____|_____/_/ \_\____/ \___/|____/ | 
+* '-----------------------------------------------------------------------' 
+*/
 const Employeers = () => {
   const [data, Setdata] = useState(null);
 
+//****---useEffect CARGAR DATOS--****
   useEffect(() => {
     async function cargarEmpleados() {
       try {
@@ -31,7 +51,8 @@ const Employeers = () => {
     //parent
     <div className="admin-page-container">
       <Sidebar />
-      {data && ( // Verificamos si data tiene un valor
+     
+      {data && ( // RENDERIZADO DE LA DATA
         <List className="list-container">
           <h1 className="title">Employeers: </h1>
           {Array.isArray(data) &&
@@ -43,9 +64,9 @@ const Employeers = () => {
                   key={item.id} //Agregamos una key unica, al item.
                   item_name={item.nombre} //Usamos item.nombre, ya que data es un array de objetos.
                   img_src={item.img}
-                  price="200$"
-                  stock="100U"
-                  description="Lorem ipsum"
+                  price={item.email}
+                  stock={item.telefono}
+                  description={item.apellido}
                 />
               ),
             )}
