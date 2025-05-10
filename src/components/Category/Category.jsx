@@ -7,21 +7,27 @@ const Category = () => {
       <div className="container">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Primera Columna */}
-          <div className="relative flex h-[320px] items-end rounded-3xl bg-gradient-to-br from-black/90 to-black/70 py-10 pl-5 text-white">
+          <div className="relative flex h-[320px] items-end rounded-3xl bg-gradient-to-br from-slate-300 to-slate-500 py-10 pl-5 text-white">
             <div>
               <div className="mb-4">
-                <img
-                  src={imagen2}
-                  alt=""
-                  className="absolute top-5 w-[200px]"
-                />
-                <p>Disfruta</p>
-                <p>nose w</p>
-                <p>Placeholder momento</p>
+                <p>Placeholder</p>
+                <p>descripcion</p>
+                <p>Placeholder</p>
               </div>
             </div>
+            <img src={imagen2} alt="" className="absolute top-5 w-[200px]" />
           </div>
           {/* Segunda Columna  */}
+          <div className="relative flex h-[320px] items-end rounded-3xl bg-gradient-to-br from-slate-300 to-slate-500 py-10 pl-5 text-white">
+            <div>
+              <div className="mb-4">
+                <p>Placeholder</p>
+                <p>Descripcion</p>
+                <p>Placeholder</p>
+              </div>
+            </div>
+            <img src={imagen2} alt="" className="absolute top-5 w-[200px]" />
+          </div>
           {/* Tercera Columna  */}
         </div>
       </div>

@@ -42,7 +42,7 @@ const Hero = () => {
 
   return (
     <div className="container">
-      <div className="min-h-[55px] overflow-hidden rounded-3xl bg-slate-300 sm:min-h-[650px]">
+      <div className="min-h-[55px] overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-400 to-cyan-400 sm:min-h-[650px] mt-5">
         <div className="container pb-8 sm:pb-0">
           <Slider {...settings}>
             {HeroData.map((data) => (
@@ -50,10 +50,10 @@ const Hero = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2">
                   {/* text content section */}
                   <div className="relative z-10 order-2 flex flex-col justify-center gap-4 text-center sm:order-1 sm:pl-3 sm:pt-0 sm:text-left">
-                    <h1 className="text-5xl font-bold sm:text-6xl lg:text-7xl">
+                    <h1 className="text-5xl font-bold text-sky-950 sm:text-6xl lg:text-7xl">
                       {data.subtitle}
                     </h1>
-                    <h1 className="text-5xl font-bold sm:text-6xl lg:text-7xl">
+                    <h1 className="text-5xl font-bold sm:text-6xl text-sky-950 lg:text-7xl">
                       {data.title1}
                     </h1>
                     <h1 className="dark:text-white/g text-5xl font-bold uppercase text-white sm:text-[80px] md:text-[100px] xl:text-[150px]">

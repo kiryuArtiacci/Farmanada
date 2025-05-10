@@ -2,12 +2,15 @@ import React from "react";
 import { Search } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 import Darkmode from "./Darkmode";
+import { Link } from "react-router";
+
+import './shadow.css';
 
 const MenuLinks = [
   {
     id: 1,
     name: "Home",
-    link: "/#",
+    link: "/",
   },
   {
     id: 2,
@@ -35,24 +38,26 @@ const DropdownLinks = [
   {
     id: 3,
     name: "Opciones de administrador",
-    link: "/#",
+    link: "/admin",
   },
 ];
 
 const Navbar = () => {
   return (
-    <div className="container flex items-center justify-between">
+    <div className="NavBar container flex items-center justify-between px-10">
       {/*Logo and links */}
 
-      <div className="relative z-40 bg-white duration-200 dark:bg-gray-900 dark:text-white">
+      <div className="relative z-40 bg-white duration-200 text-blue-900 dark:bg-gray-900 dark:text-white font-semibold">
         <div className="py-4">
+        
           <div className="flex items-center gap-4">
-            <a
-              href="#"
-              className="tracking-wides text-2xl font-semibold uppercase text-primary sm:text-3xl"
+          <img src='/public/logo-farmanada.png' className="w-10 mr-4"/>
+            <Link
+              to="/"
+              className="tracking-wides text-2xl  uppercase  "
             >
               Farma-nada
-            </a>
+            </Link>
 
             {/*Items menu */}
             <div className="hidden lg:block">
@@ -83,14 +88,15 @@ const Navbar = () => {
                     <ul className="space-y-2">
                       {DropdownLinks.map((data, index) => (
                         <li>
-                          <a
-                            href={data.link}
+                          <Link
+                            to={data.link}
                             className="font-semibold text-gray-600 duration-200 hover:text-black dark:hover:text-white"
                           >
                             {data.name}
-                          </a>
+                          </Link>
                         </li>
                       ))}
+                      <li></li>
                     </ul>
                   </div>
                 </li>

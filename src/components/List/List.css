@@ -1,0 +1,43 @@
+.container-a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(255, 255, 255);
+  margin: 16px 16px;
+  padding: 10px;
+  border-radius: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  width: 650px;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.container-a:hover {
+  background: rgb(81, 186, 218);
+  opacity: 0.9;
+  color: white;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.item-name {
+  color: rgb(0, 0, 0);
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+.item-description {
+  color: rgb(0, 0, 0);
+  margin-right: 10px;
+  opacity: 0.8;
+}
+.item-stock {
+  color: rgb(151, 26, 26);
+  margin-right: 10px;
+}
+.item-price {
+  color: rgb(151, 26, 26);
+  margin-right: 10px;
+}

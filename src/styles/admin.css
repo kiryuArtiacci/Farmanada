@@ -1,0 +1,176 @@
+.admin-page-container {
+  display: flex;
+  height: 100%;
+  margin-top: 1%;
+}
+
+.list-container {
+  display: flex;
+  box-sizing: content-box;
+  border: 1px solid white;
+  border-radius: 30px;
+  align-items: self-start;
+  justify-content: left;
+  background: #93c5fd;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: column;
+  margin-left: 10px;
+  padding: 16px;
+  background: rgb(228, 231, 233);
+  width: 40%;
+  border-radius: 50px;
+  margin-top: 16px;
+}
+
+.search {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 10px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  margin: 75px 75px;
+  padding: 10px 10px 10px 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  border: 0;
+  box-shadow: #0000 10px;
+  padding: 10px 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  box-sizing: content-box;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.button .new-item-button {
+  background: green;
+}
+.button .new-item-button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+.button .delete-item-button {
+  background: red;
+}
+.button .delete-item-button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+.button .modify-item-button {
+  background: orange;
+}
+.button .modify-item-button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.title {
+  box-sizing: content-box;
+  border-radius: 12px;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  background: gray;
+}
+
+.add-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  flex-direction: column;
+  transition: ease-in-out;
+  transition-duration: 0.5s;
+  margin-left: 20px;
+}
+
+.form-item {
+  margin-bottom: 16px;
+  color: black;
+}
+
+.add-title-container {
+  display: flex;
+  background: #09f;
+  box-sizing: content-box;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  border-radius: 25px;
+}
+
+.add-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+
+.submit-button {
+  border: 0;
+  background: green;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.descriptions {
+  display: flex;
+  align-items: center; /* Alinea verticalmente */
+  gap: 10px; /* Espaciado entre los elementos */
+  background: rgb(255, 255, 255);
+  justify-content: center;
+  padding: 10px;
+  border-radius: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  width: 650px;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+  margin-left: 12px;
+}
+
+.description-item {
+  margin-left: 50px;
+  font-size: 19px;
+  padding-right: 5px;
+}
+
+.sub-title {
+  font: 15px;
+  font-weight: bold;
+  color: rgb(5, 5, 5);
+}
